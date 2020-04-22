@@ -1,0 +1,35 @@
+<li class="search-suggest-product js-result">
+    {% block layout_search_suggest_result_link %}
+        <a href="{{ block.product.products_seo_url[0] }}"
+           title="{{ block.product.title }}"
+           class="search-suggest-product-link">
+            <div class="row align-items-center no-gutters">
+                {% block layout_search_suggest_result_image %}
+                    <div class="col-auto search-suggest-product-image-container">
+                        <img src="{{ block.product.products_image[0] }}"
+                             srcset="{{ block.product.products_image[0] }}"
+                             class="search-suggest-product-image"
+                             alt="{{ block.product.products_title }}"
+                        />
+                    </div>
+                {% endblock %}
+
+                {% block layout_search_suggest_result_name %}
+                    <div class="col search-suggest-product-name">
+                        {{ block.product.title }}
+                    </div>
+                {% endblock %}
+
+                {% block layout_search_suggest_result_price %}
+                    <div class="col-auto search-suggest-product-price">
+                        <br><small class="search-suggest-product-reference-price">{{ block.product.discountedPrice|currency }} {{ "general.star"|trans|sw_sanitize }}</small>
+                    </div>
+                {% endblock %}
+            </div>
+        </a>
+        {% for bxblock in block.blocks %}
+            {% set narrativeContent = {'block' : bxblock } %}
+            {% sw_include bxblock.template with narrativeContent %}
+        {% endfor %}
+    {% endblock %}
+</li>

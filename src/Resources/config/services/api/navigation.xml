@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <!-- Shopware6 ListingRequestDefinition reuse for navigation requests -->
+        <service id="boxalino.api.request.definition.listing"
+                 class="Boxalino\IntelligenceFramework\Service\Api\Request\Definition\ListingRequestDefinition"
+                 parent="Boxalino\IntelligenceFramework\Service\Api\Request\RequestDefinitionInterface"/>
+
+        <!-- Shopware6 definition of the navigation context used for the setup -->
+        <service id="boxalino.api.request.context.navigation" class="Boxalino\IntelligenceIntegration\Framework\Request\Context\Navigation"
+                 parent="Boxalino\IntelligenceFramework\Framework\Request\ShopwareApiContextInterface">
+            <call method="setRequestDefinition">
+                <argument type="service" id="boxalino.api.request.definition.listing"/>
+            </call>
+            <call method="setWidget"><argument>navigation</argument></call>
+            <!-- <call method="setGroupBy"><argument>id</argument></call>-->
+            <!-- <call method="setHitCount"><argument>20</argument></call>-->
+        </service>
+
+    </services>
+</container>

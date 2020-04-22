@@ -1,0 +1,55 @@
+{#
+@BoxalinoIntelligenceIntegration/storefront/narrative/element/cms-element-product-listing.html.twig
+
+the wrapper is used as a combination with the listing template
+as it was designed in the default Shopware6 theme
+@Storefront/storefront/element/cms-element-product-listing.html.twig
+@Storefront/storefront/component/product/listing.html.twig
+
+to be configured and adapted per client design
+uses a loop through Boxalino response blocks (block.blocks) to render the other elements in the layout
+(ex: toolbar, product list or other scenarios -- no products, subphrases, mix of content, etc)
+#}
+{% block element_product_listing %}
+
+    {% set listingColumns = 'col-sm-6 col-lg-4 col-xl-3' %}
+    {% if block.section and block.section == 'sidebar' %}
+        {% set listingColumns = 'col-sm-6 col-lg-6 col-xl-4' %}
+    {% endif %}
+
+    {% set filterUrl = null %}
+    {% set dataUrl = null %}
+
+    {% if block.currentFilters.navigationId %}
+        {% set filterUrl = url('frontend.cms.navigation.filter', { navigationId: block.currentFilters.navigationId }) %}
+        {% set dataUrl = url('frontend.cms.navigation.page', { navigationId: block.currentFilters.navigationId }) %}
+    {% endif %}
+
+    {% set sidebar = block.section == 'sidebar' %}
+    {% set params = {'no-aggregations': 1 } %}
+
+    {% block element_product_listing_wrapper %}
+        <div class="cms-element-product-listing-wrapper"
+             data-listing-pagination="true"
+             data-listing="true"
+             data-listing-options='{
+                 "sidebar": "{{ sidebar }}",
+                 "params": {{ params|json_encode }},
+                 "dataUrl": "{{ dataUrl }}",
+                 "filterUrl": "{{ filterUrl }}",
+                 "snippets": {
+                    "resetAllButtonText": "{{ 'listing.filterPanelResetAll'|trans|sw_sanitize }}"
+                 }
+             }'>
+
+            {% block element_product_listing_wrapper_content %}
+                <div class="cms-element-product-listing">
+                    {% for bxblock in block.blocks %}
+                        {% set narrativeContent = {'block' : bxblock, sidebar: sidebar, listingColumns: listingColumns } %}
+                        {% sw_include bxblock.template with narrativeContent %}
+                    {% endfor %}
+                </div>
+            {% endblock %}
+        </div>
+    {% endblock %}
+{% endblock %}

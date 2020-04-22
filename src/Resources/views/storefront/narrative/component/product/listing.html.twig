@@ -1,0 +1,47 @@
+{#
+@BoxalinoIntelligenceIntegration/storefront/narrative/component/product/listing.html.twig
+
+the product-listing-row segment of the original Shopware6 theme file
+(@Storefront/storefront/component/product/listing.html.twig)
+
+block.model.getItem(id) : uses the block model (ex: Boxalino\IntelligenceFramework\Framework\Content\CollectionDataProvider)
+to set a product entity from the collection of products (as returned by the Boxalino response)
+the child block (of type product) is being rendered with minimum changes
+
+optional: use the JSON SCHEMA of the product layout block to set other params (layout, displayMode, etc)
+#}
+{% block element_product_listing_row %}
+    {#
+       relevant in the case of search with subphrases matches
+    #}
+    <div><h3>{{ block.title[0] }}</h3> <a href="{{ block.see_all_link[0] }}"><h5>{{ block.see_all_label[0] }}</h5></a></div>
+
+    <div class="row cms-listing-row js-listing-wrapper">
+        {% block element_product_listing_col %}
+            {% for bxblock in block.blocks %}
+                {#
+                    when using default shopware product templates, the following properties are required:
+                    layout
+                    displayMode
+                    product
+                    listingColumns
+                #}
+                {% if bxblock.product.id %}
+                    {% set narrativeContent = {
+                        'block' : bxblock,
+                        'layout': bxblock.layout[0],
+                        'displayMode': bxblock.displayMode[0],
+                        'product':block.model.getItem(bxblock.product.id),
+                        'listingColumns' : listingColumns
+                    } %}
+                    {% sw_include bxblock.template with narrativeContent %}
+                {% else %}
+                    {# in case the content in the listing is not only product but some other type (custom) #}
+                    {% set narrativeContent = {'block' : bxblock } %}
+                    {% sw_include bxblock.template with narrativeContent %}
+                {% endif %}
+            {% endfor %}
+        {% endblock %}
+    </div>
+{% endblock %}
+

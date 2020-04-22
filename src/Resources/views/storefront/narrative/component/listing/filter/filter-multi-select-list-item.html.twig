@@ -1,0 +1,21 @@
+{% block component_filter_multi_select_list_item %}
+    <div class="custom-control custom-checkbox">
+        {% set id = element.value%} {# @TODO FIX TO element.id AFTER THE EXPORTER IS FIXED #}
+        {% set name = element.value %}
+        {% block component_filter_multi_select_list_item_checkbox_input %}
+            <input type="checkbox"
+                   class="custom-control-input filter-multi-select-checkbox"
+                   data-label="{{ name }}"
+                   value="{{ id }}"
+                   id="{{ id }}">
+        {% endblock %}
+
+        {% block component_filter_multi_select_list_item_label_element %}
+            <label class="filter-multi-select-item-label custom-control-label" for="{{ id }}">
+                {% block component_multi_select_list_item_label %}
+                    {{ name }} {% if facet.showCounter %}({{ element.hitCount }}) {% endif %}
+                {% endblock %}
+            </label>
+        {% endblock %}
+    </div>
+{% endblock %}

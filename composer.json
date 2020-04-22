@@ -1,0 +1,35 @@
+{
+    "name": "boxalino/intelligence-integration-shopware",
+    "type": "shopware-platform-plugin",
+    "description": "Boxalino Intelligence Integration",
+    "license": "proprietary",
+    "version": "0.0.1",
+    "authors": [
+        {
+            "name": "Boxalino AG",
+            "role": "Manufacturer",
+            "email": "support@boxalino.com",
+            "homepage": "http://www.boxalino.com/"
+        }
+    ],
+    "extra": {
+        "installer-paths": {
+            "custom/plugins/BoxalinoIntelligenceIntegration": ["boxalino/intelligence-integration-shopware", "vendor/package"]
+        },
+        "shopware-plugin-class": "Boxalino\\IntelligenceIntegration\\BoxalinoIntelligenceIntegration",
+        "copyright": "Boxalino AG, 2020",
+        "label": {
+            "de-DE": "Boxalino Integration guidelines für Shopware v6",
+            "en-GB": "Boxalino Integration guidelines for Shopware v6"
+        }
+    },
+    "require": {
+        "php": "^7.2",
+        "boxalino/intelligence-framework-shopware": "v0.0.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Boxalino\\IntelligenceIntegration\\": "src/"
+        }
+    }
+}
