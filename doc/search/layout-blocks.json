@@ -1,0 +1,302 @@
+[
+    {
+        "id": 776,
+        "uniqueKey": "product_list",
+        "parametersJsonScheme": "{\n  \"title\": \"Label\",\n  \"type\": \"object\",\n  \"properties\": {\n    \"title\": {\n      \"type\": \"object\",\n      \"title\": \"Label\",\n      \"properties\": {\n        \"de\": {\n          \"type\": \"string\",\n          \"description\": \"label in German\"\n        },\n        \"en\": {\n          \"type\": \"string\",\n          \"description\": \"label in English\"\n        }\n      }\n    },\n    \"see_all_label\": {\n      \"type\": \"object\",\n      \"title\": \"See all link label\",\n      \"properties\": {\n        \"de\": {\n          \"type\": \"string\",\n          \"description\": \"see all link label in German\"\n        },\n        \"en\": {\n          \"type\": \"string\",\n          \"description\": \"see all link label in English\"\n        }\n      }\n    },\n    \"see_all_link\": {\n      \"type\": \"object\",\n      \"title\": \"See all link\",\n      \"properties\": {\n        \"de\": {\n          \"type\": \"string\",\n          \"description\": \"see all link in German\"\n        },\n        \"en\": {\n          \"type\": \"string\",\n          \"description\": \"see all link in English\"\n        }\n      }\n    },\n    \"accessor\": {\n      \"type\": \"string\",\n      \"description\": \"hits accessor (typically leave empty)\"\n    }\n  }\n}",
+        "format": null,
+        "widgets": [],
+        "parameters": [
+            {
+                "name": "template",
+                "values": [
+                    "@BoxalinoIntelligenceIntegration/storefront/narrative/component/product/listing.html.twig"
+                ]
+            },
+            {
+                "name": "content-resource",
+                "values": [
+                    "c-r=t"
+                ]
+            },
+            {
+                "name": "bx-hits",
+                "values": [
+                    "accessor"
+                ]
+            },
+            {
+                "name": "model",
+                "values": [
+                    "boxalino.api.content.collection"
+                ]
+            }
+        ],
+        "subRenderings": [],
+        "route": "visual-elements",
+        "reqParams": null,
+        "$fromServer": true,
+        "parentResource": null,
+        "restangularCollection": false,
+        "isSelected": true
+    },
+    {
+        "id": 777,
+        "uniqueKey": "facet_list",
+        "parametersJsonScheme": "{\n  \"title\": \"Facets\",\n  \"type\": \"object\",\n  \"properties\": {\n   \"section\": {\n      \"type\": \"string\",\n      \"title\" : \"Location\",\n      \"enums\" : [\"\", \"sidebar\"]\n    },\n    \"accessor\": {\n      \"type\": \"string\",\n      \"description\": \"facet accessor (typically leave empty)\"\n    }\n  }\n}",
+        "format": null,
+        "widgets": [],
+        "parameters": [
+            {
+                "name": "content-resource",
+                "values": [
+                    "c-r=t"
+                ]
+            },
+            {
+                "name": "bx-facets",
+                "values": [
+                    "accessor"
+                ]
+            },
+            {
+                "name": "template",
+                "values": [
+                    "@BoxalinoIntelligenceIntegration/storefront/narrative/component/listing/filter-panel.html.twig"
+                ]
+            }
+        ],
+        "subRenderings": [],
+        "route": "visual-elements",
+        "reqParams": null,
+        "$fromServer": true,
+        "parentResource": null,
+        "restangularCollection": false,
+        "isSelected": true
+    },
+    {
+        "id": 778,
+        "uniqueKey": "title",
+        "parametersJsonScheme": "{\n  \"title\": \"Title (H1)\",\n  \"type\": \"object\",\n  \"properties\": {\n    \"title\": {\n      \"type\": \"object\",\n      \"title\": \"Title\",\n      \"properties\": {\n        \"de\": {\n          \"type\": \"string\",\n          \"description\": \"title in German\"\n        },\n        \"en\": {\n          \"type\": \"string\",\n          \"description\": \"title in English\"\n        }\n      }\n    }\n  }\n}",
+        "format": null,
+        "widgets": [],
+        "parameters": [
+            {
+                "name": "template",
+                "values": [
+                    "@BoxalinoIntelligenceIntegration/storefront/narrative/page/search/title.html.twig"
+                ]
+            },
+            {
+                "name": "content-resource",
+                "values": [
+                    "c-r=t"
+                ]
+            }
+        ],
+        "subRenderings": [],
+        "route": "visual-elements",
+        "reqParams": null,
+        "$fromServer": true,
+        "parentResource": null,
+        "restangularCollection": false,
+        "isSelected": true
+    },
+    {
+        "id": 782,
+        "uniqueKey": "search_title",
+        "parametersJsonScheme": "{\n  \"title\": \"Title (H1)\",\n  \"type\": \"object\",\n  \"properties\": {\n    \"title\": {\n      \"type\": \"object\",\n      \"title\": \"Normal Search Title\",\n      \"properties\": {\n        \"de\": {\n          \"type\": \"string\",\n          \"description\": \"normal search titlein German\"\n        },\n        \"en\": {\n          \"type\": \"string\",\n          \"description\": \"normal search title in English\"\n        }\n      }\n    },\n    \"bx_alternate_title\": {\n      \"type\": \"object\",\n      \"title\": \"Corrected Search Title\",\n      \"properties\": {\n        \"de\": {\n          \"type\": \"string\",\n          \"description\": \"corrected search title in German\"\n        },\n        \"en\": {\n          \"type\": \"string\",\n          \"description\": \"corrected search titlein English\"\n        }\n      }\n    },\n    \"accessor\": {\n      \"type\": \"string\",\n      \"description\": \"facet accessor (typically leave empty)\"\n    }\n  }\n}",
+        "format": null,
+        "widgets": [],
+        "parameters": [
+            {
+                "name": "template",
+                "values": [
+                    "@BoxalinoIntelligenceIntegration/storefront/narrative/page/search/title.html.twig"
+                ]
+            },
+            {
+                "name": "content-resource",
+                "values": [
+                    "c-r=t"
+                ]
+            },
+            {
+                "name": "bx-search-title",
+                "values": [
+                    "accessor"
+                ]
+            }
+        ],
+        "subRenderings": [],
+        "route": "visual-elements",
+        "reqParams": null,
+        "$fromServer": true,
+        "parentResource": null,
+        "restangularCollection": false,
+        "isSelected": true
+    },
+    {
+        "id": 786,
+        "uniqueKey": "product",
+        "parametersJsonScheme": "{\n  \"title\": \"Product\",\n  \"type\": \"object\",\n  \"properties\": {\n\"layout\": {\n      \"type\": \"string\",\n      \"description\": \"per your Shopware options (minimal, standard, image)\"\n    },\n\"displayMode\": {\n      \"type\": \"string\",\n      \"description\": \"per your Shopware options for displayMode (cover, standard, contain, etc)\"\n    },\n    \"accessor\": {\n      \"type\": \"string\",\n      \"description\": \"hits accessor (typically leave empty)\"\n    }\n  }\n}",
+        "format": null,
+        "widgets": [],
+        "parameters": [
+            {
+                "name": "template",
+                "values": [
+                    "@BoxalinoIntelligenceIntegration/storefront/narrative/component/product/card/box.html.twig"
+                ]
+            },
+            {
+                "name": "content-resource",
+                "values": [
+                    "c-r=t"
+                ]
+            },
+            {
+                "name": "bx-hit",
+                "values": [
+                    "accessor"
+                ]
+            }
+        ],
+        "subRenderings": [],
+        "route": "visual-elements",
+        "reqParams": null,
+        "$fromServer": true,
+        "parentResource": null,
+        "restangularCollection": false,
+        "isSelected": true
+    },
+    {
+        "id": 787,
+        "uniqueKey": "pagination",
+        "parametersJsonScheme": "{\n  \"title\": \"Pagination\",\n  \"type\": \"object\",\n  \"properties\": {\n    \"accessor\": {\n      \"type\": \"string\",\n      \"description\": \"hits accessor (typically leave empty)\"\n    }\n  }\n}",
+        "format": null,
+        "widgets": [],
+        "parameters": [
+            {
+                "name": "template",
+                "values": [
+                    "@BoxalinoIntelligenceIntegration/storefront/narrative/component/pagination.html.twig"
+                ]
+            },
+            {
+                "name": "content-resource",
+                "values": [
+                    "c-r=t"
+                ]
+            },
+            {
+                "name": "bx-pagination",
+                "values": [
+                    "accessor"
+                ]
+            }
+        ],
+        "subRenderings": [],
+        "route": "visual-elements",
+        "reqParams": null,
+        "$fromServer": true,
+        "parentResource": null,
+        "restangularCollection": false,
+        "isSelected": true
+    },
+    {
+        "id": 795,
+        "uniqueKey": "sorting",
+        "parametersJsonScheme": "{\n  \"title\": \"Sorting\",\n  \"type\": \"object\",\n  \"properties\": {\n    \"accessor\": {\n      \"type\": \"string\",\n      \"description\": \"hits accessor (typically leave empty)\"\n    }\n  }\n}",
+        "format": null,
+        "widgets": [],
+        "parameters": [
+            {
+                "name": "template",
+                "values": [
+                    "@BoxalinoIntelligenceIntegration/storefront/narrative/component/sorting.html.twig"
+                ]
+            },
+            {
+                "name": "content-resource",
+                "values": [
+                    "c-r=t"
+                ]
+            },
+            {
+                "name": "bx-sort",
+                "values": [
+                    "accessor"
+                ]
+            }
+        ],
+        "subRenderings": [],
+        "route": "visual-elements",
+        "reqParams": null,
+        "$fromServer": true,
+        "parentResource": null,
+        "restangularCollection": false,
+        "isSelected": true
+    },
+    {
+        "id": 798,
+        "uniqueKey": "toolbar",
+        "parametersJsonScheme": "{\n  \"title\": \"Accessor\",\n  \"type\": \"object\",\n  \"properties\": {\n    \"accessor\": {\n      \"type\": \"string\",\n      \"description\": \"hits accessor (typically leave empty)\"\n    }\n  }\n}",
+        "format": null,
+        "widgets": [],
+        "parameters": [
+            {
+                "name": "content-resource",
+                "values": [
+                    "c-r=t"
+                ]
+            },
+            {
+                "name": "bx-hitCounts",
+                "values": [
+                    "accessor"
+                ]
+            },
+            {
+                "name": "template",
+                "values": [
+                    "@BoxalinoIntelligenceIntegration/storefront/narrative/component/toolbar.html.twig"
+                ]
+            }
+        ],
+        "subRenderings": [],
+        "route": "visual-elements",
+        "reqParams": null,
+        "$fromServer": true,
+        "parentResource": null,
+        "restangularCollection": false,
+        "isSelected": true
+    },
+    {
+        "id": 799,
+        "uniqueKey": "listing_wrapper",
+        "parametersJsonScheme": "{\n  \"title\": \"Wrapper\",\n  \"type\": \"object\",\n  \"properties\": {\n    \"section\": {\n      \"type\": \"string\",\n      \"title\" : \"Location\",\n      \"enums\" : [\"\", \"sidebar\"]\n    }\n  }\n}",
+        "format": null,
+        "widgets": [],
+        "parameters": [
+            {
+                "name": "template",
+                "values": [
+                    "@BoxalinoIntelligenceIntegration/storefront/narrative/element/cms-element-product-listing.html.twig"
+                ]
+            },
+            {
+                "name": "content-resource",
+                "values": [
+                    "c-r=t"
+                ]
+            }
+        ],
+        "subRenderings": [],
+        "route": "visual-elements",
+        "reqParams": null,
+        "$fromServer": true,
+        "parentResource": null,
+        "restangularCollection": false,
+        "isSelected": true
+    }
+]
