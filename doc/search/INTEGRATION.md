@@ -1,7 +1,7 @@
 # SEARCH INTEGRATION
 
 Please be aware that there have to be designed Layout Blocks in Boxalino Intelligence Admin
-and that there has to exist a narrative attached to the widget <b>autocomplete</b>
+and that there has to exist a narrative attached to the widget <b>search</b>
 
 JSON samples of both elements are being provided and can be imported in your Boxalino Intelligence Admin panel.
 
@@ -15,7 +15,7 @@ https://github.com/boxalino/intelligence-framework-shopware/blob/master/src/Serv
 
 * the search request context is done by extending the context abstract provided in the Framework 
 https://github.com/boxalino/intelligence-framework-shopware/blob/master/src/Framework/Request/ContextAbstract.php
-(autocomplete context sample https://github.com/boxalino/intelligence-integration-shopware/blob/master/src/Framework/Request/Context/Search.php)
+(search context sample https://github.com/boxalino/intelligence-integration-shopware/blob/master/src/Framework/Request/Context/Search.php)
 
 > as an integrator, you can either build your own (following it`s sample) 
 > or extend it (it provides generic filters) for each use-case in order to set more filters if desired or other parameters (return fields, etc) 
@@ -30,7 +30,7 @@ https://github.com/boxalino/intelligence-framework-shopware/blob/e284694d5e8356d
 
 Shopware works with the concept of PageContentLoader, so there is one provided for the framework: 
 https://github.com/boxalino/intelligence-framework-shopware/blob/master/src/Framework/Content/Page/ApiPageLoader.php
-this content loader is generic and it has to be declared as a service on which it is declared the ApiContextInterface which is context-specific (autocomplete, navigation, etc): 
+this content loader is generic and it has to be declared as a service on which it is declared the ApiContextInterface which is context-specific (search, navigation, etc): 
 https://github.com/boxalino/intelligence-integration-shopware/blob/master/src/Resources/config/services/api/page.xml#L16 and has been created&declared at the prior step https://github.com/boxalino/intelligence-integration-shopware/blob/master/src/Resources/config/services/api/search.xml#L13
 
 ###### 3. Decorate the SearchController and use the ApiPageLoader as a dependency
