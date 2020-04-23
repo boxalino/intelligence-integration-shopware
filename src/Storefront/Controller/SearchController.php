@@ -9,6 +9,7 @@ use Shopware\Core\Framework\Routing\Exception\MissingRequestParameterException;
 use Shopware\Core\System\SalesChannel\SalesChannelContext;
 use Shopware\Storefront\Framework\Cache\Annotation\HttpCache;
 use Shopware\Storefront\Page\GenericPageLoader;
+use Symfony\Component\Config\Definition\Exception\Exception;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -34,11 +35,18 @@ class SearchController extends ShopwareSearchController
      */
     private $autocompleteApiPageLoader;
 
+    /**
+     * @var ShopwareSearchController
+     */
+    private $decorated;
+
     public function __construct(
+        ShopwareSearchController $decorated,
         SearchPageLoader $searchApiPageLoader,
         AutocompletePageLoader $autocompleteApiPageLoader,
         LoggerInterface $logger
     ){
+        $this->decorated = $decorated;
         $this->searchApiPageLoader = $searchApiPageLoader;
         $this->autocompleteApiPageLoader = $autocompleteApiPageLoader;
         $this->logger = $logger;
@@ -52,19 +60,23 @@ class SearchController extends ShopwareSearchController
     {
         try {
             $page = $this->searchApiPageLoader->load($request, $context);
-        } catch (MissingRequestParameterException $missingRequestParameterException) {
-            return $this->forwardToRoute('frontend.home.page');
+            if($page->getRedirectUrl())
+            {
+                return $this->forwardToRoute($page->getRedirectUrl());
+            }
+
+            /**
+             * the render template is a narrative page
+             */
+            return $this->renderStorefront('@BoxalinoIntelligenceFramework/storefront/element/cms-element-narrative-page.html.twig', ['page' => $page]);
+        } catch (\Throwable $exception) {
+            /**
+             * Fallback
+             */
+            $this->logger->alert("BoxalinoAPI: There was an issue with your request." . $exception->getMessage());
+            return $this->decorated->search($context, $request);
         }
 
-        if($page->getRedirectUrl())
-        {
-            return $this->forwardToRoute($page->getRedirectUrl());
-        }
-
-        /**
-         * the render template is a narrative page
-         */
-        return $this->renderStorefront('@BoxalinoIntelligenceFramework/storefront/element/cms-element-narrative-page.html.twig', ['page' => $page]);
     }
 
     /**
@@ -73,12 +85,20 @@ class SearchController extends ShopwareSearchController
      */
     public function suggest(SalesChannelContext $context, Request $request): Response
     {
-        $page = $this->autocompleteApiPageLoader->load($request, $context);
-
-        /**
-         * the render template is a narrative element
-         */
-        return $this->renderStorefront('@BoxalinoIntelligenceFramework/storefront/element/cms-element-narrative-content.html.twig', ['page' => $page]);
+        try{
+            $page = $this->autocompleteApiPageLoader->load($request, $context);
+            /**
+             * the render template is a narrative element
+             */
+            return $this->renderStorefront('@BoxalinoIntelligenceFramework/storefront/element/cms-element-narrative-content.html.twig', ['page' => $page]);
+        } catch (\Throwable $exception)
+        {
+            /**
+             * Fallback
+             */
+            $this->logger->warning("BoxalinoAPI: There was an issue with the autocomplete request " . $exception->getMessage());
+            return $this->decorated->suggest($context, $request);
+        }
     }
 
 }

@@ -23,6 +23,7 @@
         <!-- SEARCH CONTROLLER DECORATOR frontend.search.suggest  -->
         <service id="Boxalino\IntelligenceIntegration\Storefront\Controller\SearchController"
                  decorates="Shopware\Storefront\Controller\SearchController" public="true">
+            <argument type="service" id="Boxalino\IntelligenceIntegration\Storefront\Controller\SearchController.inner"/>
             <argument type="service" id="boxalino.api.content.page.loader.search" />
             <argument type="service" id="boxalino.api.content.page.loader.autocomplete"/>
             <argument type="service" id="monolog.logger.boxalino-integration"/>
