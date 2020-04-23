@@ -1,0 +1,118 @@
+[
+    {
+        "id": 774,
+        "uniqueKey": "autocomplete_text_list",
+        "parametersJsonScheme": "{\n  \"title\": \"Autocomplete Text List\",\n  \"type\": \"object\",\n  \"properties\": {\n    \"accessor\": {\n      \"type\": \"string\",\n      \"description\": \"ac-queries accessor (typically leave empty)\"\n    }\n  }\n}",
+        "format": null,
+        "widgets": [],
+        "parameters": [
+            {
+                "name": "content-resource",
+                "values": [
+                    "c-r=t"
+                ]
+            },
+            {
+                "name": "bx-acQueries",
+                "values": [
+                    "accessor"
+                ]
+            },
+            {
+                "name": "template",
+                "values": [
+                    "@BoxalinoIntelligenceIntegration/storefront/narrative/layout/header/suggest/suggestion-list.html.twig"
+                ]
+            }
+        ],
+        "subRenderings": [],
+        "isSelected": true
+    },
+    {
+        "id": 775,
+        "uniqueKey": "autocomplete_product_list",
+        "parametersJsonScheme": "{\n  \"title\": \"Label\",\n  \"type\": \"object\",\n  \"properties\": {\n    \"title\": {\n      \"type\": \"object\",\n      \"title\": \"Label\",\n      \"properties\": {\n        \"de\": {\n          \"type\": \"string\",\n          \"description\": \"label in German\"\n        },\n        \"en\": {\n          \"type\": \"string\",\n          \"description\": \"label in English\"\n        }\n      }\n    },\n    \"see_all_label\": {\n      \"type\": \"object\",\n      \"title\": \"See all link label\",\n      \"properties\": {\n        \"de\": {\n          \"type\": \"string\",\n          \"description\": \"see all link label in German\"\n        },\n        \"en\": {\n          \"type\": \"string\",\n          \"description\": \"see all link label in English\"\n        }\n      }\n    },\n    \"see_all_link\": {\n      \"type\": \"object\",\n      \"title\": \"See all link\",\n      \"properties\": {\n        \"de\": {\n          \"type\": \"string\",\n          \"description\": \"see all link in German\"\n        },\n        \"en\": {\n          \"type\": \"string\",\n          \"description\": \"see all link in English\"\n        }\n      }\n    },\n    \"accessor\": {\n      \"type\": \"string\",\n      \"description\": \"hits accessor (typically leave empty)\"\n    }\n  }\n}",
+        "format": null,
+        "widgets": [],
+        "parameters": [
+            {
+                "name": "template",
+                "values": [
+                    "@BoxalinoIntelligenceIntegration/storefront/narrative/layout/header/suggest/product-list.html.twig"
+                ]
+            },
+            {
+                "name": "content-resource",
+                "values": [
+                    "c-r=t"
+                ]
+            },
+            {
+                "name": "bx-hits",
+                "values": [
+                    "accessor"
+                ]
+            }
+        ],
+        "subRenderings": [],
+        "isSelected": true
+    },
+    {
+        "id": 784,
+        "uniqueKey": "autocomplete_text",
+        "parametersJsonScheme": "{\n  \"title\": \"Autocomplete Text\",\n  \"type\": \"object\",\n  \"properties\": {\n    \"accessor\": {\n      \"type\": \"string\",\n      \"description\": \"autocomplete accessor (typically leave empty)\"\n    }\n  }\n}",
+        "format": null,
+        "widgets": [],
+        "parameters": [
+            {
+                "name": "template",
+                "values": [
+                    "@BoxalinoIntelligenceIntegration/storefront/narrative/layout/header/suggest/suggestion-item.html.twig"
+                ]
+            },
+            {
+                "name": "content-resource",
+                "values": [
+                    "c-r=t"
+                ]
+            },
+            {
+                "name": "bx-acQuery",
+                "values": [
+                    "accessor"
+                ]
+            }
+        ],
+        "subRenderings": [],
+        "isSelected": true
+    },
+    {
+        "id": 785,
+        "uniqueKey": "autocomplete_product",
+        "parametersJsonScheme": "{\n  \"title\": \"Product\",\n  \"type\": \"object\",\n  \"properties\": {\n    \"accessor\": {\n      \"type\": \"string\",\n      \"description\": \"hits accessor (typically leave empty)\"\n    }\n  }\n}",
+        "format": null,
+        "widgets": [],
+        "parameters": [
+            {
+                "name": "template",
+                "values": [
+                    "@BoxalinoIntelligenceIntegration/storefront/narrative/layout/header/suggest/product-item.html.twig"
+                ]
+            },
+            {
+                "name": "content-resource",
+                "values": [
+                    "c-r=t"
+                ]
+            },
+            {
+                "name": "bx-hit",
+                "values": [
+                    "accessor"
+                ]
+            }
+        ],
+        "subRenderings": [],
+        "isSelected": true
+    }
+]

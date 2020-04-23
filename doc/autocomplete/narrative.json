@@ -1,0 +1,213 @@
+[
+    {
+        "id": 729,
+        "status": null,
+        "uniqueKey": "autocomplete",
+        "aliases": null,
+        "widgets": [
+            "autocomplete"
+        ],
+        "allWidgets": null,
+        "parametersJsonScheme": null,
+        "seoContent": {
+            "title": [
+                {
+                    "language": "de",
+                    "value": ""
+                },
+                {
+                    "language": "fr",
+                    "value": ""
+                }
+            ],
+            "metaTags": [],
+            "h1": [
+                {
+                    "language": "de",
+                    "value": ""
+                },
+                {
+                    "language": "fr",
+                    "value": ""
+                }
+            ],
+            "others": [
+                {
+                    "name": "breadcrumbs",
+                    "value": [
+                        {
+                            "language": "de",
+                            "value": ""
+                        },
+                        {
+                            "language": "fr",
+                            "value": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        "contexts": [],
+        "layoutModels": null,
+        "acts": [
+            {
+                "parameters": [
+                    null
+                ],
+                "chapter": {
+                    "format": "CPOActChapter",
+                    "contexts": [],
+                    "subActs": [],
+                    "journeyStepUniqueKeys": null,
+                    "callToActions": null,
+                    "renderings": [
+                        {
+                            "parameters": [
+                                null
+                            ],
+                            "rendering": {
+                                "contexts": [],
+                                "layoutModels": [],
+                                "visualElements": [
+                                    {
+                                        "visualElementModelUniqueKey": "autocomplete_text_list",
+                                        "label": null,
+                                        "parameters": [
+                                            {
+                                                "name": "accessor",
+                                                "values": [
+                                                    ""
+                                                ]
+                                            }
+                                        ],
+                                        "visualElement": null,
+                                        "subRenderings": [
+                                            {
+                                                "parameters": [
+                                                    null
+                                                ],
+                                                "rendering": {
+                                                    "contexts": [],
+                                                    "layoutModels": [],
+                                                    "visualElements": [
+                                                        {
+                                                            "visualElementModelUniqueKey": "autocomplete_text",
+                                                            "label": null,
+                                                            "parameters": [
+                                                                {
+                                                                    "name": "accessor",
+                                                                    "values": [
+                                                                        ""
+                                                                    ]
+                                                                }
+                                                            ],
+                                                            "visualElement": null,
+                                                            "subRenderings": [
+                                                                {
+                                                                    "parameters": [
+                                                                        null
+                                                                    ],
+                                                                    "rendering": {
+                                                                        "contexts": [],
+                                                                        "layoutModels": [],
+                                                                        "visualElements": [],
+                                                                        "parameters": null
+                                                                    }
+                                                                }
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "parameters": null
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "visualElementModelUniqueKey": "autocomplete_product_list",
+                                        "label": null,
+                                        "parameters": [
+                                            {
+                                                "name": "title",
+                                                "values": [
+                                                    "{\"de\":\"\",\"en\":\"\"}"
+                                                ]
+                                            },
+                                            {
+                                                "name": "see_all_label",
+                                                "values": [
+                                                    "{\"de\":\"\",\"en\":\"\"}"
+                                                ]
+                                            },
+                                            {
+                                                "name": "see_all_link",
+                                                "values": [
+                                                    "{\"de\":\"\",\"en\":\"\"}"
+                                                ]
+                                            },
+                                            {
+                                                "name": "accessor",
+                                                "values": [
+                                                    ""
+                                                ]
+                                            }
+                                        ],
+                                        "visualElement": null,
+                                        "subRenderings": [
+                                            {
+                                                "parameters": [
+                                                    null
+                                                ],
+                                                "rendering": {
+                                                    "contexts": [],
+                                                    "layoutModels": [],
+                                                    "visualElements": [
+                                                        {
+                                                            "visualElementModelUniqueKey": "autocomplete_product",
+                                                            "label": null,
+                                                            "parameters": [
+                                                                {
+                                                                    "name": "accessor",
+                                                                    "values": [
+                                                                        ""
+                                                                    ]
+                                                                }
+                                                            ],
+                                                            "visualElement": null,
+                                                            "subRenderings": [
+                                                                {
+                                                                    "parameters": [
+                                                                        null
+                                                                    ],
+                                                                    "rendering": {
+                                                                        "contexts": [],
+                                                                        "layoutModels": [],
+                                                                        "visualElements": [],
+                                                                        "parameters": null
+                                                                    }
+                                                                }
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "parameters": null
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "parameters": null
+                            }
+                        }
+                    ],
+                    "parameters": null
+                }
+            }
+        ],
+        "parameters": [],
+        "route": "narratives",
+        "reqParams": null,
+        "$fromServer": true,
+        "parentResource": null,
+        "restangularCollection": false,
+        "isSelected": true
+    }
+]
