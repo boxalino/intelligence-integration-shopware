@@ -1,16 +1,12 @@
-{% block layout_search_suggest %}
-    <div class="search-suggest js-search-result">
-        {% block layout_search_suggest_container %}
-            <ul class="search-suggest-container">
-                {% for bxblock in block.blocks %}
-                    {% if bxblock.suggestion %}
-                        {% block layout_search_suggest_result_suggestion %}
-                            {% set narrativeContent = {'block' : bxblock } %}
-                            {% sw_include bxblock.template with narrativeContent %}
-                        {% endblock %}
-                    {% endif %}
-                {% endfor %}
-            </ul>
-        {% endblock %}
-    </div>
+{% block layout_search_suggest_suggestion %}
+    {% block layout_search_suggest_container %}
+        {% for bxblock in block.blocks %}
+            {% if bxblock.suggestion %}
+                {% block layout_search_suggest_result_suggestion %}
+                    {% set narrativeContent = {'block' : bxblock } %}
+                    {% sw_include bxblock.template with narrativeContent %}
+                {% endblock %}
+            {% endif %}
+        {% endfor %}
+    {% endblock %}
 {% endblock %}

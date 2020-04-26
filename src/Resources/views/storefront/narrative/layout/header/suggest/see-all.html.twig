@@ -1,0 +1,42 @@
+{#
+per default @Storefront/storefront/layout/header/search-suggest.html.twig template
+template for autocomplete-see-all Layout Block in Boxalino Intelligence Admin configuration
+
+displays the link to search with all search results
+or
+displays the no result text for the given search query
+#}
+
+{% block layout_search_suggest_result_total %}
+    {% if page.totalHitCount == 0 %}
+        {% block layout_search_suggest_no_result %}
+            <li class="search-suggest-no-result">
+                {{ "header.searchNoResult"|trans|sw_sanitize }}
+            </li>
+        {% endblock %}
+    {% else %}
+
+        {% block layout_search_suggest_result_total_result %}
+            <li class="js-result search-suggest-total">
+                <div class="row align-items-center no-gutters">
+                    {% block layout_search_suggest_result_total_link %}
+                        <div class="col">
+                            <a href="{{ path('frontend.search.page') }}?search="
+                               title="{{ "header.searchAllResults"|trans|striptags }}"
+                               class="search-suggest-total-link">
+                                {% sw_icon 'arrow-head-right' style { 'size': 'sm' } %}
+                                {{ "header.searchAllResults"|trans|sw_sanitize }}
+                            </a>
+                        </div>
+                    {% endblock %}
+
+                    {% block layout_search_suggest_result_total_count %}
+                        <div class="col-auto search-suggest-total-count">
+                            {{ page.totalHitCount }} {{ "header.searchResults"|trans|sw_sanitize }}
+                        </div>
+                    {% endblock %}
+                </div>
+            </li>
+        {% endblock %}
+    {% endif %}
+{% endblock %}

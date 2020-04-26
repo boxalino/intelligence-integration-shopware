@@ -1,0 +1,21 @@
+{#
+per default @Storefront/storefront/layout/header/search-suggest.html.twig template
+template for autocomplete-wrapper Layout Block in Boxalino Intelligence Admin configuration
+
+the autocomplete-wrapper that will auto-render the autocomplete response:
+suggestion list (autocomplete-suggestion-list Layout Block)
+product list (autocomplete-product-list Layout Block)
+see all (autocomplete-see-all Layout Block)
+#}
+{% block layout_search_suggest %}
+    <div class="search-suggest js-search-result">
+        {% block layout_search_suggest_container %}
+            <ul class="search-suggest-container">
+                {% for bxblock in block.blocks %}
+                    {% set narrativeContent = {'block' : bxblock } %}
+                    {% sw_include bxblock.template with narrativeContent %}
+                {% endfor %}
+            </ul>
+        {% endblock %}
+    </div>
+{% endblock %}
