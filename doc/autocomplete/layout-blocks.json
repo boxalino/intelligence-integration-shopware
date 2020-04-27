@@ -26,6 +26,11 @@
             }
         ],
         "subRenderings": [],
+        "route": "visual-elements",
+        "reqParams": null,
+        "$fromServer": true,
+        "parentResource": null,
+        "restangularCollection": false,
         "isSelected": true
     },
     {
@@ -55,6 +60,11 @@
             }
         ],
         "subRenderings": [],
+        "route": "visual-elements",
+        "reqParams": null,
+        "$fromServer": true,
+        "parentResource": null,
+        "restangularCollection": false,
         "isSelected": true
     },
     {
@@ -84,6 +94,11 @@
             }
         ],
         "subRenderings": [],
+        "route": "visual-elements",
+        "reqParams": null,
+        "$fromServer": true,
+        "parentResource": null,
+        "restangularCollection": false,
         "isSelected": true
     },
     {
@@ -113,6 +128,67 @@
             }
         ],
         "subRenderings": [],
+        "route": "visual-elements",
+        "reqParams": null,
+        "$fromServer": true,
+        "parentResource": null,
+        "restangularCollection": false,
+        "isSelected": true
+    },
+    {
+        "id": 806,
+        "uniqueKey": "autocomplete_see_all",
+        "parametersJsonScheme": "{\n  \"title\": \"Text with Link\",\n  \"type\": \"object\",\n  \"properties\": {\n    \"title\": {\n      \"type\": \"object\",\n      \"title\": \"Label\",\n      \"properties\": {\n        \"de\": {\n          \"type\": \"string\",\n          \"description\": \"label in German\"\n        },\n        \"en\": {\n          \"type\": \"string\",\n          \"description\": \"label in English\"\n        }\n      }\n    },\n    \"term\": {\n      \"type\": \"string\",\n      \"title\": \"Search Term\"\n    },\n    \"accessor\": {\n      \"type\": \"string\",\n      \"description\": \"hits accessor (typically leave empty)\"\n    }\n  }\n}",
+        "format": null,
+        "widgets": [],
+        "parameters": [
+            {
+                "name": "content-resource",
+                "values": [
+                    "c-r=t"
+                ]
+            },
+            {
+                "name": "template",
+                "values": [
+                    "@BoxalinoIntelligenceIntegration/storefront/narrative/layout/header/suggest/see-all.html.twig"
+                ]
+            }
+        ],
+        "subRenderings": [],
+        "route": "visual-elements",
+        "reqParams": null,
+        "$fromServer": true,
+        "parentResource": null,
+        "restangularCollection": false,
+        "isSelected": true
+    },
+    {
+        "id": 807,
+        "uniqueKey": "autocomplete_wrapper",
+        "parametersJsonScheme": "{\n  \"title\": \"Autocomplete Wrapper\",\n  \"type\": \"object\",\n  \"properties\": {\n    \"accessor\": {\n      \"type\": \"string\",\n      \"description\": \"ac-queries accessor (typically leave empty)\"\n    }\n  }\n}",
+        "format": null,
+        "widgets": [],
+        "parameters": [
+            {
+                "name": "content-resource",
+                "values": [
+                    "c-r=t"
+                ]
+            },
+            {
+                "name": "template",
+                "values": [
+                    "@BoxalinoIntelligenceIntegration/storefront/narrative/layout/header/search-suggest.html.twig"
+                ]
+            }
+        ],
+        "subRenderings": [],
+        "route": "visual-elements",
+        "reqParams": null,
+        "$fromServer": true,
+        "parentResource": null,
+        "restangularCollection": false,
         "isSelected": true
     }
 ]

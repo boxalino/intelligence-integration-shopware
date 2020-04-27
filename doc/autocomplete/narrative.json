@@ -70,7 +70,7 @@
                                 "layoutModels": [],
                                 "visualElements": [
                                     {
-                                        "visualElementModelUniqueKey": "autocomplete_text_list",
+                                        "visualElementModelUniqueKey": "autocomplete_wrapper",
                                         "label": null,
                                         "parameters": [
                                             {
@@ -83,15 +83,13 @@
                                         "visualElement": null,
                                         "subRenderings": [
                                             {
-                                                "parameters": [
-                                                    null
-                                                ],
+                                                "parameters": null,
                                                 "rendering": {
                                                     "contexts": [],
                                                     "layoutModels": [],
                                                     "visualElements": [
                                                         {
-                                                            "visualElementModelUniqueKey": "autocomplete_text",
+                                                            "visualElementModelUniqueKey": "autocomplete_text_list",
                                                             "label": null,
                                                             "parameters": [
                                                                 {
@@ -104,67 +102,63 @@
                                                             "visualElement": null,
                                                             "subRenderings": [
                                                                 {
-                                                                    "parameters": [
-                                                                        null
-                                                                    ],
+                                                                    "parameters": null,
                                                                     "rendering": {
                                                                         "contexts": [],
                                                                         "layoutModels": [],
-                                                                        "visualElements": [],
+                                                                        "visualElements": [
+                                                                            {
+                                                                                "visualElementModelUniqueKey": "autocomplete_text",
+                                                                                "label": null,
+                                                                                "parameters": [
+                                                                                    {
+                                                                                        "name": "accessor",
+                                                                                        "values": [
+                                                                                            ""
+                                                                                        ]
+                                                                                    }
+                                                                                ],
+                                                                                "visualElement": null,
+                                                                                "subRenderings": [
+                                                                                    {
+                                                                                        "parameters": null,
+                                                                                        "rendering": {
+                                                                                            "contexts": [],
+                                                                                            "layoutModels": [],
+                                                                                            "visualElements": [],
+                                                                                            "parameters": null
+                                                                                        }
+                                                                                    }
+                                                                                ]
+                                                                            }
+                                                                        ],
                                                                         "parameters": null
                                                                     }
                                                                 }
                                                             ]
-                                                        }
-                                                    ],
-                                                    "parameters": null
-                                                }
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "visualElementModelUniqueKey": "autocomplete_product_list",
-                                        "label": null,
-                                        "parameters": [
-                                            {
-                                                "name": "title",
-                                                "values": [
-                                                    "{\"de\":\"\",\"en\":\"\"}"
-                                                ]
-                                            },
-                                            {
-                                                "name": "see_all_label",
-                                                "values": [
-                                                    "{\"de\":\"\",\"en\":\"\"}"
-                                                ]
-                                            },
-                                            {
-                                                "name": "see_all_link",
-                                                "values": [
-                                                    "{\"de\":\"\",\"en\":\"\"}"
-                                                ]
-                                            },
-                                            {
-                                                "name": "accessor",
-                                                "values": [
-                                                    ""
-                                                ]
-                                            }
-                                        ],
-                                        "visualElement": null,
-                                        "subRenderings": [
-                                            {
-                                                "parameters": [
-                                                    null
-                                                ],
-                                                "rendering": {
-                                                    "contexts": [],
-                                                    "layoutModels": [],
-                                                    "visualElements": [
+                                                        },
                                                         {
-                                                            "visualElementModelUniqueKey": "autocomplete_product",
+                                                            "visualElementModelUniqueKey": "autocomplete_product_list",
                                                             "label": null,
                                                             "parameters": [
+                                                                {
+                                                                    "name": "title",
+                                                                    "values": [
+                                                                        "{\"de\":\"\",\"en\":\"\"}"
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "name": "see_all_label",
+                                                                    "values": [
+                                                                        "{\"de\":\"\",\"en\":\"\"}"
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "name": "see_all_link",
+                                                                    "values": [
+                                                                        "{\"de\":\"\",\"en\":\"\"}"
+                                                                    ]
+                                                                },
                                                                 {
                                                                     "name": "accessor",
                                                                     "values": [
@@ -175,9 +169,68 @@
                                                             "visualElement": null,
                                                             "subRenderings": [
                                                                 {
-                                                                    "parameters": [
-                                                                        null
-                                                                    ],
+                                                                    "parameters": null,
+                                                                    "rendering": {
+                                                                        "contexts": [],
+                                                                        "layoutModels": [],
+                                                                        "visualElements": [
+                                                                            {
+                                                                                "visualElementModelUniqueKey": "autocomplete_product",
+                                                                                "label": null,
+                                                                                "parameters": [
+                                                                                    {
+                                                                                        "name": "accessor",
+                                                                                        "values": [
+                                                                                            ""
+                                                                                        ]
+                                                                                    }
+                                                                                ],
+                                                                                "visualElement": null,
+                                                                                "subRenderings": [
+                                                                                    {
+                                                                                        "parameters": null,
+                                                                                        "rendering": {
+                                                                                            "contexts": [],
+                                                                                            "layoutModels": [],
+                                                                                            "visualElements": [],
+                                                                                            "parameters": null
+                                                                                        }
+                                                                                    }
+                                                                                ]
+                                                                            }
+                                                                        ],
+                                                                        "parameters": null
+                                                                    }
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "visualElementModelUniqueKey": "autocomplete_see_all",
+                                                            "label": null,
+                                                            "parameters": [
+                                                                {
+                                                                    "name": "title",
+                                                                    "values": [
+                                                                        "{\"de\":\"\",\"en\":\"\"}"
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "name": "term",
+                                                                    "values": [
+                                                                        "steel"
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "name": "accessor",
+                                                                    "values": [
+                                                                        ""
+                                                                    ]
+                                                                }
+                                                            ],
+                                                            "visualElement": null,
+                                                            "subRenderings": [
+                                                                {
+                                                                    "parameters": null,
                                                                     "rendering": {
                                                                         "contexts": [],
                                                                         "layoutModels": [],
