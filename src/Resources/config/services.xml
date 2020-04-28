@@ -24,4 +24,15 @@
         <import resource="services/api/crossselling.xml"/>
     </imports>
 
+    <services>
+        <!-- Full exporter data syncrhonization task (requires configuration)  -->
+        <service id="Boxalino\IntelligenceIntegration\ScheduledTask\ExporterFull">
+            <tag name="shopware.scheduled.task" />
+        </service>
+        <!-- scheduled task handler with link to the task scheduler class -->
+        <service id="Boxalino\IntelligenceIntegration\ScheduledTask\ExporterFullHandler"
+                 parent="Boxalino\IntelligenceIntegration\ScheduledTask\ExporterFullHandlerAbstract" abstract="true">
+        </service>
+    </services>
+
 </container>
