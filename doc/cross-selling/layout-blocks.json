@@ -1,0 +1,58 @@
+[
+    {
+        "id": 786,
+        "uniqueKey": "product",
+        "parametersJsonScheme": "{\n  \"title\": \"Product\",\n  \"type\": \"object\",\n  \"properties\": {\n\"layout\": {\n      \"type\": \"string\",\n      \"description\": \"per your Shopware options (minimal, standard, image)\"\n    },\n\"displayMode\": {\n      \"type\": \"string\",\n      \"description\": \"per your Shopware options for displayMode (cover, standard, contain, etc)\"\n    },\n    \"accessor\": {\n      \"type\": \"string\",\n      \"description\": \"hits accessor (typically leave empty)\"\n    }\n  }\n}",
+        "format": null,
+        "widgets": [],
+        "parameters": [
+            {
+                "name": "template",
+                "values": [
+                    "@BoxalinoIntelligenceIntegration/storefront/narrative/component/product/card/box.html.twig"
+                ]
+            },
+            {
+                "name": "bx-hit",
+                "values": [
+                    "accessor"
+                ]
+            }
+        ],
+        "subRenderings": [],
+        "route": "visual-elements",
+        "reqParams": null,
+        "$fromServer": true,
+        "parentResource": null,
+        "restangularCollection": false,
+        "isSelected": true
+    },
+    {
+        "id": 820,
+        "uniqueKey": "cross-selling",
+        "parametersJsonScheme": "{\n  \"title\": \"Cross-selling\",\n  \"type\": \"object\",\n  \"properties\": {\n    \"name\": {\n      \"type\": \"object\",\n      \"title\": \"Name\",\n      \"properties\": {\n        \"de\": {\n          \"type\": \"string\",\n          \"description\": \"Name in German\"\n        },\n        \"en\": {\n          \"type\": \"string\",\n          \"description\": \"Name in English\"\n        }\n      }\n    },\n    \"type\": {\n      \"type\": \"string\",\n      \"title\": \"Cross-selling Type\"\n    },\n    \"accessor\": {\n      \"type\": \"string\",\n      \"description\": \"hits accessor (typically leave empty except for main type)\"\n    }\n  }\n}",
+        "format": null,
+        "widgets": [],
+        "parameters": [
+            {
+                "name": "bx-hits",
+                "values": [
+                    "accessor"
+                ]
+            },
+            {
+                "name": "model",
+                "values": [
+                    "boxalino.api.content.collection"
+                ]
+            }
+        ],
+        "subRenderings": [],
+        "route": "visual-elements",
+        "reqParams": null,
+        "$fromServer": true,
+        "parentResource": null,
+        "restangularCollection": false,
+        "isSelected": true
+    }
+]

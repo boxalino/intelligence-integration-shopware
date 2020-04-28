@@ -71,7 +71,7 @@
                                 "visualElements": [
                                     {
                                         "visualElementModelUniqueKey": "autocomplete_wrapper",
-                                        "label": null,
+                                        "label": "Autocomplete",
                                         "parameters": [
                                             {
                                                 "name": "accessor",
@@ -83,14 +83,16 @@
                                         "visualElement": null,
                                         "subRenderings": [
                                             {
-                                                "parameters": null,
+                                                "parameters": [
+                                                    null
+                                                ],
                                                 "rendering": {
                                                     "contexts": [],
                                                     "layoutModels": [],
                                                     "visualElements": [
                                                         {
                                                             "visualElementModelUniqueKey": "autocomplete_text_list",
-                                                            "label": null,
+                                                            "label": "Suggestions List",
                                                             "parameters": [
                                                                 {
                                                                     "name": "accessor",
@@ -102,7 +104,9 @@
                                                             "visualElement": null,
                                                             "subRenderings": [
                                                                 {
-                                                                    "parameters": null,
+                                                                    "parameters": [
+                                                                        null
+                                                                    ],
                                                                     "rendering": {
                                                                         "contexts": [],
                                                                         "layoutModels": [],
@@ -121,7 +125,9 @@
                                                                                 "visualElement": null,
                                                                                 "subRenderings": [
                                                                                     {
-                                                                                        "parameters": null,
+                                                                                        "parameters": [
+                                                                                            null
+                                                                                        ],
                                                                                         "rendering": {
                                                                                             "contexts": [],
                                                                                             "layoutModels": [],
@@ -139,7 +145,7 @@
                                                         },
                                                         {
                                                             "visualElementModelUniqueKey": "autocomplete_product_list",
-                                                            "label": null,
+                                                            "label": "Product List",
                                                             "parameters": [
                                                                 {
                                                                     "name": "title",
@@ -169,7 +175,9 @@
                                                             "visualElement": null,
                                                             "subRenderings": [
                                                                 {
-                                                                    "parameters": null,
+                                                                    "parameters": [
+                                                                        null
+                                                                    ],
                                                                     "rendering": {
                                                                         "contexts": [],
                                                                         "layoutModels": [],
@@ -188,7 +196,9 @@
                                                                                 "visualElement": null,
                                                                                 "subRenderings": [
                                                                                     {
-                                                                                        "parameters": null,
+                                                                                        "parameters": [
+                                                                                            null
+                                                                                        ],
                                                                                         "rendering": {
                                                                                             "contexts": [],
                                                                                             "layoutModels": [],
@@ -206,7 +216,7 @@
                                                         },
                                                         {
                                                             "visualElementModelUniqueKey": "autocomplete_see_all",
-                                                            "label": null,
+                                                            "label": "See all link",
                                                             "parameters": [
                                                                 {
                                                                     "name": "title",
@@ -217,7 +227,7 @@
                                                                 {
                                                                     "name": "term",
                                                                     "values": [
-                                                                        "steel"
+                                                                        "$.requests[0].searchQuery^"
                                                                     ]
                                                                 },
                                                                 {
@@ -230,7 +240,9 @@
                                                             "visualElement": null,
                                                             "subRenderings": [
                                                                 {
-                                                                    "parameters": null,
+                                                                    "parameters": [
+                                                                        null
+                                                                    ],
                                                                     "rendering": {
                                                                         "contexts": [],
                                                                         "layoutModels": [],

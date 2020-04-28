@@ -1,12 +1,7 @@
 <?php declare(strict_types=1);
 namespace Boxalino\IntelligenceIntegration\Framework\Request\Context;
 
-use Boxalino\IntelligenceFramework\Framework\Request\ContextAbstract;
-use Boxalino\IntelligenceFramework\Service\Api\Request\RequestDefinitionInterface;
-use GuzzleHttp\Psr7\Response;
-use JsonSerializable;
-use Psr\Http\Message\RequestInterface;
-use Shopware\Core\System\SystemConfig\SystemConfigService;
+use Boxalino\IntelligenceFramework\Framework\Request\AutocompleteContextAbstract;
 use Shopware\Core\Content\Product\Aggregate\ProductVisibility\ProductVisibilityDefinition;
 use Shopware\Core\System\SalesChannel\SalesChannelContext;
 use Symfony\Component\HttpFoundation\Request;
@@ -24,33 +19,8 @@ use Symfony\Component\HttpFoundation\Request;
  *
  * @package Boxalino\IntelligenceIntegration\Service\Api
  */
-class Autocomplete extends ContextAbstract
+class Autocomplete extends AutocompleteContextAbstract
 {
-    /**
-     * @var int
-     */
-    protected $hitCount = 1;
-
-    /**
-     * @var int
-     */
-    protected $suggestionCount = 0;
-
-    /**
-     * Adding autocomplete specific request parameters
-     *
-     * @param Request $request
-     * @return RequestDefinitionInterface
-     */
-    public function get(Request $request) : RequestDefinitionInterface
-    {
-        parent::get($request);
-        $this->getApiRequest()
-            ->setAcQueriesHitCount($this->getSuggestionsCount())
-            ->setHitCount($this->getHitCount());
-
-        return $this->getApiRequest();
-    }
 
     /**
      * @param Request $request
@@ -76,26 +46,6 @@ class Autocomplete extends ContextAbstract
     public function getReturnFields() : array
     {
         return ["id", "discountedPrice", "products_seo_url", "title", "products_image"];
-    }
-
-    /**
-     * Set the number of textual suggestions returned as part of the autocomplete response
-     *
-     * @param int $count
-     * @return $this|ContextAbstract
-     */
-    public function setSuggestionCount(int $count) : ContextAbstract
-    {
-        $this->suggestionCount = $count;
-        return $this;
-    }
-
-    /**
-     * @return int
-     */
-    public function getSuggestionsCount() : int
-    {
-        return $this->suggestionCount;
     }
 
 }

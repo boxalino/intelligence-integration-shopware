@@ -4,20 +4,18 @@
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <services>
-        <!-- Shopware6 ListingRequestDefinition reuse for search requests -->
-        <service id="boxalino.api.request.definition.search"
-                 class="Boxalino\IntelligenceFramework\Service\Api\Request\Definition\ListingRequestDefinition"
-                 parent="Boxalino\IntelligenceFramework\Service\Api\Request\RequestDefinitionInterface"/>
-
         <!-- Shopware6 definition of the search context used for the setup -->
-        <service id="boxalino.api.request.context.search" class="Boxalino\IntelligenceIntegration\Framework\Request\Context\Search"
-                 parent="Boxalino\IntelligenceFramework\Framework\Request\ShopwareApiContextInterface">
+        <service id="boxalino.integration.context.search" class="Boxalino\IntelligenceIntegration\Framework\Request\Context\Search"
+                 parent="Boxalino\IntelligenceFramework\Service\Api\Request\Context\SearchContextInterface">
             <call method="setRequestDefinition">
-                <argument type="service" id="boxalino.api.request.definition.search"/>
+                <!-- the service defined in BoxalinoIntelligenceFramework OR design a custom one -->
+                <argument type="service" id="Boxalino\IntelligenceFramework\Service\Api\Request\Definition\SearchRequestDefinitionInterface"/>
             </call>
             <call method="setWidget"><argument>search</argument></call>
             <!-- <call method="setGroupBy"><argument>id</argument></call>-->
             <!-- <call method="setHitCount"><argument>20</argument></call>-->
+            <!-- <call method="setSubPhrasesCount"><argument>3</argument></call>-->
+            <!-- <call method="setSubPhrasesProductsCount"><argument>6</argument></call>-->
         </service>
 
     </services>

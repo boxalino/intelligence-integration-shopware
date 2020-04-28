@@ -8,7 +8,7 @@ Boxalino can provide further documentation and assistance upon request.
 Included functionalities (with samples of templates):
 1. Autocomplete integration
 2. Search integration
-3. PDP recommendations (via CrossSellingLoader event)*
+3. PDP recommendations (via subscriber event)
 4. Basket recommendations*
 4. Narrative API CMS page element*
 5. Narrative API CMS page*

@@ -153,6 +153,12 @@
                 "values": [
                     "@BoxalinoIntelligenceIntegration/storefront/narrative/layout/header/suggest/see-all.html.twig"
                 ]
+            },
+            {
+                "name": "bx-hitCounts",
+                "values": [
+                    "accessor"
+                ]
             }
         ],
         "subRenderings": [],

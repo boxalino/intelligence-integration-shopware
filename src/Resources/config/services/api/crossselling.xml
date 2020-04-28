@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <!-- Shopware6 definition of the PDP context used for the setup  (as a base for widgets and so on)-->
+        <service id="boxalino.integration.context.crossselling"
+                 class="Boxalino\IntelligenceIntegration\Framework\Request\Context\CrossSelling"
+                 parent="Boxalino\IntelligenceFramework\Service\Api\Request\Context\ItemContextInterface">
+            <call method="setRequestDefinition">
+                <argument type="service" id="Boxalino\IntelligenceFramework\Service\Api\Request\Definition\ItemRequestDefinitionInterface"/>
+            </call>
+            <call method="setWidget"><argument>accessories</argument></call>
+            <call method="setHitCount"><argument>7</argument></call>
+            <call method="setGroupBy"><argument>id</argument></call>
+<!--            <call method="setConfiguredProductsAsContextParameters"><argument>true</argument></call>-->
+        </service>
+
+        <!-- Shopware6 content loader for cross-selling with the crosselling context set -->
+        <service id="boxalino.integration.loader.crossselling"
+                 class="Boxalino\IntelligenceFramework\Framework\Content\Page\ApiCrossSellingLoader"
+                 parent="boxalino.api.content.page.crossselling">
+            <call method="setApiContextInterface">
+                <argument type="service" id="boxalino.integration.context.crossselling"/>
+            </call>
+        </service>
+
+        <!-- Crosselling Loader event subscriber to be added when wanting to use it -->
+        <service id="Boxalino\IntelligenceFramework\Framework\Content\Subscriber\ApiCrossSellingLoaderSubscriber">
+            <argument type="service" id="boxalino.integration.loader.crossselling"/>
+            <tag name="kernel.event_subscriber"/>
+        </service>
+
+    </services>
+</container>

@@ -1,24 +1,20 @@
 <?php declare(strict_types=1);
 namespace Boxalino\IntelligenceIntegration\Framework\Request\Context;
 
-use Boxalino\IntelligenceFramework\Framework\Request\ContextAbstract;
-use Boxalino\IntelligenceFramework\Framework\Request\SearchContextAbstract;
-use GuzzleHttp\Client;
-use JsonSerializable;
-use Psr\Http\Message\RequestInterface;
+use Boxalino\IntelligenceFramework\Framework\Request\ItemContextAbstract;
 use Shopware\Core\Content\Product\Aggregate\ProductVisibility\ProductVisibilityDefinition;
 use Shopware\Core\System\SalesChannel\SalesChannelContext;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
- * Search request
+ * PDP recommendation request
  *
- * A listing context can render a default Category/Search view layout:
- * facets, products, sorting, pagination and other narrative elements
+ * PDP recommendation context requires a product id as an item context
+ * set on the api request
  *
  * @package Boxalino\IntelligenceIntegration\Framework\Request\Context
  */
-class Search extends SearchContextAbstract
+class CrossSelling extends ItemContextAbstract
 {
     /**
      * @return int
@@ -43,7 +39,7 @@ class Search extends SearchContextAbstract
      */
     public function getReturnFields() : array
     {
-        return ["id", "discountedPrice", "products_seo_url", "title", "products_image"];
+        return ["id"];
     }
 
 }

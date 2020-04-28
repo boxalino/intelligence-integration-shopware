@@ -4,21 +4,18 @@
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <services>
-        <!-- Shopware6 AutocompleteRequestDefinition model for autocomplete requests -->
-        <service id="Boxalino\IntelligenceFramework\Service\Api\Request\Definition\AutocompleteRequestDefinitionInterface"
-                 class="Boxalino\IntelligenceFramework\Service\Api\Request\Definition\AutocompleteRequestDefinition"
-                 parent="Boxalino\IntelligenceFramework\Service\Api\Request\RequestDefinitionInterface"/>
-
         <!-- Shopware6 definition of the autocomplete context used for the setup -->
-        <service id="boxalino.api.request.context.autocomplete" class="Boxalino\IntelligenceIntegration\Framework\Request\Context\Autocomplete"
-                 parent="Boxalino\IntelligenceFramework\Framework\Request\ShopwareApiContextInterface">
+        <service id="boxalino.integration.context.autocomplete" class="Boxalino\IntelligenceIntegration\Framework\Request\Context\Autocomplete"
+                 parent="Boxalino\IntelligenceFramework\Service\Api\Request\Context\AutocompleteContextInterface">
             <call method="setRequestDefinition">
                 <argument type="service" id="Boxalino\IntelligenceFramework\Service\Api\Request\Definition\AutocompleteRequestDefinitionInterface"/>
             </call>
             <call method="setWidget"><argument>autocomplete</argument></call>
             <call method="setHitCount"><argument>10</argument></call>
             <call method="setSuggestionCount"><argument>5</argument></call>
-            <!-- <call method="setGroupBy"><argument>id</argument></call>-->
+<!--            <call method="setHighlight"><argument>false</argument></call>-->
+<!--            <call method="setHighlightPrefix"><argument>&lt;em&gt;</argument></call>-->
+<!--            <call method="setHighlightPostfix"><argument><![CDATA[</em>]]> </argument></call>-->
         </service>
 
     </services>

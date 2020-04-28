@@ -149,12 +149,6 @@
                 ]
             },
             {
-                "name": "content-resource",
-                "values": [
-                    "c-r=t"
-                ]
-            },
-            {
                 "name": "bx-hit",
                 "values": [
                     "accessor"

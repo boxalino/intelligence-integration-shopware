@@ -21,6 +21,7 @@
         <import resource="services/api/page.xml"/>
         <import resource="services/api/autocomplete.xml"/>
         <import resource="services/api/search.xml"/>
+        <import resource="services/api/crossselling.xml"/>
     </imports>
 
 </container>

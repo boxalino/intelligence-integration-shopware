@@ -21,7 +21,7 @@ displays the no result text for the given search query
                 <div class="row align-items-center no-gutters">
                     {% block layout_search_suggest_result_total_link %}
                         <div class="col">
-                            <a href="{{ path('frontend.search.page') }}?search="
+                            <a href="{{ path('frontend.search.page') }}?search={{ block.term[0] }}"
                                title="{{ "header.searchAllResults"|trans|striptags }}"
                                class="search-suggest-total-link">
                                 {% sw_icon 'arrow-head-right' style { 'size': 'sm' } %}

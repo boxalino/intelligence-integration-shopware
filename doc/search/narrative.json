@@ -115,7 +115,7 @@
                                                         {
                                                             "name": "title",
                                                             "values": [
-                                                                "{\"de\":\"Suchergebnisse für '$.requests[0].searchQuery^'\",\"en\":\"Search results for  '$.requests[0].searchQuery^'\"}"
+                                                                "{\"de\":\"Zu  '$.requests[0].searchQuery^' wurden  '$.responses[0].totalHitCount^' Produkt(e) gefunden\",\"en\":\"We found '$.responses[0].totalHitCount^' products for  '$.requests[0].searchQuery^'\"}"
                                                             ]
                                                         },
                                                         {

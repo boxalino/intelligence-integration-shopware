@@ -12,6 +12,7 @@ https://github.com/boxalino/intelligence-integration-shopware/blob/master/src/Re
 
 * the autocomplete request definition is available via an interface 
 https://github.com/boxalino/intelligence-framework-shopware/blob/master/src/Service/Api/Request/Definition/AutocompleteRequestDefinitionInterface.php
+and has been declared as a service in BoxalinoIntelligenceFramework
 
 * the autocomplete request context is done by extending the context abstract provided in the Framework 
 https://github.com/boxalino/intelligence-framework-shopware/blob/master/src/Framework/Request/ContextAbstract.php

@@ -1,0 +1,397 @@
+[
+    {
+        "id": 763,
+        "status": null,
+        "uniqueKey": "cross-selling",
+        "aliases": null,
+        "widgets": [
+            "accessories"
+        ],
+        "allWidgets": null,
+        "parametersJsonScheme": null,
+        "seoContent": {
+            "title": [
+                {
+                    "language": "de",
+                    "value": ""
+                },
+                {
+                    "language": "fr",
+                    "value": ""
+                }
+            ],
+            "metaTags": [],
+            "h1": [
+                {
+                    "language": "de",
+                    "value": "Cross-selling on PDP"
+                },
+                {
+                    "language": "fr",
+                    "value": "Cross-selling on PDP"
+                }
+            ],
+            "others": [
+                {
+                    "name": "breadcrumbs",
+                    "value": [
+                        {
+                            "language": "de",
+                            "value": ""
+                        },
+                        {
+                            "language": "fr",
+                            "value": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        "contexts": [],
+        "layoutModels": null,
+        "acts": [
+            {
+                "parameters": [
+                    null
+                ],
+                "chapter": {
+                    "format": "CPOActChapter",
+                    "contexts": [],
+                    "subActs": [],
+                    "journeyStepUniqueKeys": null,
+                    "callToActions": null,
+                    "renderings": [
+                        {
+                            "parameters": [
+                                null
+                            ],
+                            "rendering": {
+                                "contexts": [],
+                                "layoutModels": [],
+                                "visualElements": [
+                                    {
+                                        "visualElementModelUniqueKey": "cross-selling",
+                                        "label": "Accessories",
+                                        "parameters": [
+                                            {
+                                                "name": "name",
+                                                "values": [
+                                                    "{\"de\":\"Passend dazu\",\"en\":\"Related Products\"}"
+                                                ]
+                                            },
+                                            {
+                                                "name": "type",
+                                                "values": [
+                                                    "accessories"
+                                                ]
+                                            },
+                                            {
+                                                "name": "accessor",
+                                                "values": [
+                                                    ""
+                                                ]
+                                            }
+                                        ],
+                                        "visualElement": null,
+                                        "subRenderings": [
+                                            {
+                                                "parameters": [
+                                                    null
+                                                ],
+                                                "rendering": {
+                                                    "contexts": [],
+                                                    "layoutModels": [],
+                                                    "visualElements": [
+                                                        {
+                                                            "visualElementModelUniqueKey": "product",
+                                                            "label": null,
+                                                            "parameters": [
+                                                                {
+                                                                    "name": "layout",
+                                                                    "values": [
+                                                                        ""
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "name": "displayMode",
+                                                                    "values": [
+                                                                        ""
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "name": "accessor",
+                                                                    "values": [
+                                                                        ""
+                                                                    ]
+                                                                }
+                                                            ],
+                                                            "visualElement": null,
+                                                            "subRenderings": [
+                                                                {
+                                                                    "parameters": [
+                                                                        null
+                                                                    ],
+                                                                    "rendering": {
+                                                                        "contexts": [],
+                                                                        "layoutModels": [],
+                                                                        "visualElements": [],
+                                                                        "parameters": null
+                                                                    }
+                                                                }
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "parameters": null
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "visualElementModelUniqueKey": "cross-selling",
+                                        "label": "Similar",
+                                        "parameters": [
+                                            {
+                                                "name": "name",
+                                                "values": [
+                                                    "{\"de\":\"Ähnliche Artikel\",\"en\":\"Similar Products\"}"
+                                                ]
+                                            },
+                                            {
+                                                "name": "type",
+                                                "values": [
+                                                    "similar"
+                                                ]
+                                            },
+                                            {
+                                                "name": "accessor",
+                                                "values": [
+                                                    "similar"
+                                                ]
+                                            }
+                                        ],
+                                        "visualElement": null,
+                                        "subRenderings": [
+                                            {
+                                                "parameters": [
+                                                    null
+                                                ],
+                                                "rendering": {
+                                                    "contexts": [],
+                                                    "layoutModels": [],
+                                                    "visualElements": [
+                                                        {
+                                                            "visualElementModelUniqueKey": "product",
+                                                            "label": null,
+                                                            "parameters": [
+                                                                {
+                                                                    "name": "layout",
+                                                                    "values": [
+                                                                        ""
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "name": "displayMode",
+                                                                    "values": [
+                                                                        ""
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "name": "accessor",
+                                                                    "values": [
+                                                                        ""
+                                                                    ]
+                                                                }
+                                                            ],
+                                                            "visualElement": null,
+                                                            "subRenderings": [
+                                                                {
+                                                                    "parameters": [
+                                                                        null
+                                                                    ],
+                                                                    "rendering": {
+                                                                        "contexts": [],
+                                                                        "layoutModels": [],
+                                                                        "visualElements": [],
+                                                                        "parameters": null
+                                                                    }
+                                                                }
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "parameters": null
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "visualElementModelUniqueKey": "cross-selling",
+                                        "label": "Complementary (bought together)",
+                                        "parameters": [
+                                            {
+                                                "name": "name",
+                                                "values": [
+                                                    "{\"de\":\"Kunden kauften auch\",\"en\":\"Bought together \"}"
+                                                ]
+                                            },
+                                            {
+                                                "name": "type",
+                                                "values": [
+                                                    "complementary"
+                                                ]
+                                            },
+                                            {
+                                                "name": "accessor",
+                                                "values": [
+                                                    "complementary"
+                                                ]
+                                            }
+                                        ],
+                                        "visualElement": null,
+                                        "subRenderings": [
+                                            {
+                                                "parameters": [
+                                                    null
+                                                ],
+                                                "rendering": {
+                                                    "contexts": [],
+                                                    "layoutModels": [],
+                                                    "visualElements": [
+                                                        {
+                                                            "visualElementModelUniqueKey": "product",
+                                                            "label": null,
+                                                            "parameters": [
+                                                                {
+                                                                    "name": "layout",
+                                                                    "values": [
+                                                                        ""
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "name": "displayMode",
+                                                                    "values": [
+                                                                        ""
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "name": "accessor",
+                                                                    "values": [
+                                                                        ""
+                                                                    ]
+                                                                }
+                                                            ],
+                                                            "visualElement": null,
+                                                            "subRenderings": [
+                                                                {
+                                                                    "parameters": [
+                                                                        null
+                                                                    ],
+                                                                    "rendering": {
+                                                                        "contexts": [],
+                                                                        "layoutModels": [],
+                                                                        "visualElements": [],
+                                                                        "parameters": null
+                                                                    }
+                                                                }
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "parameters": null
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "visualElementModelUniqueKey": "cross-selling",
+                                        "label": "Related",
+                                        "parameters": [
+                                            {
+                                                "name": "name",
+                                                "values": [
+                                                    "{\"de\":\"Produkte\",\"en\":\"Related Items\"}"
+                                                ]
+                                            },
+                                            {
+                                                "name": "type",
+                                                "values": [
+                                                    "related"
+                                                ]
+                                            },
+                                            {
+                                                "name": "accessor",
+                                                "values": [
+                                                    "related"
+                                                ]
+                                            }
+                                        ],
+                                        "visualElement": null,
+                                        "subRenderings": [
+                                            {
+                                                "parameters": [
+                                                    null
+                                                ],
+                                                "rendering": {
+                                                    "contexts": [],
+                                                    "layoutModels": [],
+                                                    "visualElements": [
+                                                        {
+                                                            "visualElementModelUniqueKey": "product",
+                                                            "label": null,
+                                                            "parameters": [
+                                                                {
+                                                                    "name": "layout",
+                                                                    "values": [
+                                                                        ""
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "name": "displayMode",
+                                                                    "values": [
+                                                                        ""
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "name": "accessor",
+                                                                    "values": [
+                                                                        ""
+                                                                    ]
+                                                                }
+                                                            ],
+                                                            "visualElement": null,
+                                                            "subRenderings": [
+                                                                {
+                                                                    "parameters": [
+                                                                        null
+                                                                    ],
+                                                                    "rendering": {
+                                                                        "contexts": [],
+                                                                        "layoutModels": [],
+                                                                        "visualElements": [],
+                                                                        "parameters": null
+                                                                    }
+                                                                }
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "parameters": null
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "parameters": null
+                            }
+                        }
+                    ],
+                    "parameters": null
+                }
+            }
+        ],
+        "parameters": [],
+        "route": "narratives",
+        "reqParams": null,
+        "$fromServer": true,
+        "parentResource": null,
+        "restangularCollection": false,
+        "isSelected": true
+    }
+]

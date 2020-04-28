@@ -5,18 +5,18 @@
 
     <services>
         <!-- Shopware6 content loader for autocomplete (used as a dependency in the controller) -->
-        <service id="boxalino.api.content.page.loader.autocomplete" class="Boxalino\IntelligenceFramework\Framework\Content\Page\ApiPageLoader"
+        <service id="boxalino.integration.loader.autocomplete" class="Boxalino\IntelligenceFramework\Framework\Content\Page\ApiPageLoader"
                  parent="boxalino.api.content.page.loader">
             <call method="setApiContextInterface">
-                <argument type="service" id="boxalino.api.request.context.autocomplete"/>
+                <argument type="service" id="boxalino.integration.context.autocomplete"/>
             </call>
         </service>
 
         <!-- Shopware6 content loader for search (used as a dependency in controller) -->
-        <service id="boxalino.api.content.page.loader.search" class="Boxalino\IntelligenceFramework\Framework\Content\Page\ApiPageLoader"
+        <service id="boxalino.integration.loader.search" class="Boxalino\IntelligenceFramework\Framework\Content\Page\ApiPageLoader"
                  parent="boxalino.api.content.page.loader">
             <call method="setApiContextInterface">
-                <argument type="service" id="boxalino.api.request.context.search"/>
+                <argument type="service" id="boxalino.integration.context.search"/>
             </call>
         </service>
 
@@ -24,8 +24,8 @@
         <service id="Boxalino\IntelligenceIntegration\Storefront\Controller\SearchController"
                  decorates="Shopware\Storefront\Controller\SearchController" public="true">
             <argument type="service" id="Boxalino\IntelligenceIntegration\Storefront\Controller\SearchController.inner"/>
-            <argument type="service" id="boxalino.api.content.page.loader.search" />
-            <argument type="service" id="boxalino.api.content.page.loader.autocomplete"/>
+            <argument type="service" id="boxalino.integration.loader.search" />
+            <argument type="service" id="boxalino.integration.loader.autocomplete"/>
             <argument type="service" id="monolog.logger.boxalino-integration"/>
             <call method="setContainer">
                 <argument type="service" id="service_container"/>
