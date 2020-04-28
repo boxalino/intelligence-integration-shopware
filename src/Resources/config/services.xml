@@ -31,7 +31,8 @@
         </service>
         <!-- scheduled task handler with link to the task scheduler class -->
         <service id="Boxalino\IntelligenceIntegration\ScheduledTask\ExporterFullHandler"
-                 parent="Boxalino\IntelligenceIntegration\ScheduledTask\ExporterFullHandlerAbstract" abstract="true">
+                 parent="Boxalino\IntelligenceFramework\ScheduledTask\ExporterFullHandlerAbstract">
+            <tag name="messenger.message_handler" />
         </service>
     </services>
 
