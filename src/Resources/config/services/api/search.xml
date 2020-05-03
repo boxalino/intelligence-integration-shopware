@@ -14,8 +14,8 @@
             <call method="setWidget"><argument>search</argument></call>
             <!-- <call method="setGroupBy"><argument>id</argument></call>-->
             <!-- <call method="setHitCount"><argument>20</argument></call>-->
-            <!-- <call method="setSubPhrasesCount"><argument>3</argument></call>-->
-            <!-- <call method="setSubPhrasesProductsCount"><argument>6</argument></call>-->
+             <call method="setSubPhrasesCount"><argument>3</argument></call>
+             <call method="setSubPhrasesProductsCount"><argument>6</argument></call>
         </service>
 
     </services>

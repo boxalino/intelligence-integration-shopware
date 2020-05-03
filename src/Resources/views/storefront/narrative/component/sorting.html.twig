@@ -5,10 +5,11 @@ renders the sorting as available per accessor model
 (Boxalino/IntelligenceFramework/Service/Api/Response/Accessor/Sort)
 #}
 {% set config = { sorting: block.sorting.field } %}
+{% set current = block.model.getCurrent() %}
 {% block element_product_listing_sorting %}
     <div class="sorting" data-listing-sorting="true" data-listing-sorting-options='{{ config|json_encode }}'>
         <select class="sorting custom-select" aria-label="{{ 'general.sortingLabel'|trans|striptags }}">
-            {% for sorting in block.sorting.sortings %}
+            {% for sorting in block.model.getSortings() %}
                 {% set key = sorting.key %}
                 <option value="{{ key }}"{% if key == current %} selected{% endif %}>{{ sorting.snippet|trans|sw_sanitize }}</option>
             {% endfor %}

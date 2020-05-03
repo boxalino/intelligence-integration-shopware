@@ -11,11 +11,11 @@ https://github.com/boxalino/intelligence-integration-shopware/blob/master/src/Re
 (widget name, context, etc)
 
 * the search request definition is available via an interface 
-https://github.com/boxalino/intelligence-framework-shopware/blob/master/src/Service/Api/Request/Definition/ListingRequestDefinitionInterface.php
+https://github.com/boxalino/intelligence-framework-shopware/blob/master/src/Service/Api/Request/Definition/SearchRequestDefinition.php
 and has been declared as a service in BoxalinoIntelligenceFramework
 
 * the search request context is done by extending the context abstract provided in the Framework 
-https://github.com/boxalino/intelligence-framework-shopware/blob/master/src/Framework/Request/ContextAbstract.php
+https://github.com/boxalino/intelligence-framework-shopware/blob/master/src/Framework/Request/SearchContextAbstract.php
 (search context sample https://github.com/boxalino/intelligence-integration-shopware/blob/master/src/Framework/Request/Context/Search.php)
 
 > as an integrator, you can either build your own (following it`s sample) 
@@ -24,20 +24,22 @@ https://github.com/boxalino/intelligence-framework-shopware/blob/master/src/Fram
 <i>the Search[Context] will be the one to make the request by using an entity called RequestTransformer 
 [https://github.com/boxalino/intelligence-framework-shopware/blob/master/src/Framework/Request/RequestTransformer.php] 
 and adding extra filters per context: 
-https://github.com/boxalino/intelligence-framework-shopware/blob/e284694d5e8356d9e0ab4c0ca4d58e135f67cd83/src/Framework/Request/ContextAbstract.php#L98
+https://github.com/boxalino/intelligence-framework-shopware/blob/master/src/Framework/Request/ContextAbstract.php#L88
 </i>
 
 ###### 2. Declare a service for the ApiPageLoader
 
-Shopware works with the concept of PageContentLoader, so there is one provided for the framework: 
+Shopware6 works with the concept of PageContentLoader, so there is one provided for the framework: 
 https://github.com/boxalino/intelligence-framework-shopware/blob/master/src/Framework/Content/Page/ApiPageLoader.php
 this content loader is generic and it has to be declared as a service on which it is declared the ApiContextInterface which is context-specific (search, navigation, etc): 
-https://github.com/boxalino/intelligence-integration-shopware/blob/master/src/Resources/config/services/api/page.xml#L16 and has been created&declared at the prior step https://github.com/boxalino/intelligence-integration-shopware/blob/master/src/Resources/config/services/api/search.xml#L13
+https://github.com/boxalino/intelligence-integration-shopware/blob/master/src/Resources/config/services/api/page.xml#L16 
+and has been created&declared at the prior step 
+https://github.com/boxalino/intelligence-integration-shopware/blob/master/src/Resources/config/services/api/search.xml#L13
 
 ###### 3. Decorate the SearchController and use the ApiPageLoader as a dependency
 
 Extend the controller service by making use of the Search ApiPageLoader from step#2
-https://github.com/boxalino/intelligence-integration-shopware/blob/d5d8c2c2077a7d710c5f40b465149ad17c1fb064/src/Resources/config/services/api/page.xml#L26
+https://github.com/boxalino/intelligence-integration-shopware/src/Resources/config/services/api/page.xml#L27
 
 > The context ApiPageContentLoader is being used in the controller/cms pages/etc  
   The ApiPageLoader has access to Search[Context] request definition and to the ApiCallService
@@ -47,9 +49,18 @@ https://github.com/boxalino/intelligence-integration-shopware/blob/d5d8c2c2077a7
 ###### 4. Create the SearchController
 
 It will be used in order to rewrite the actual search action.
-https://github.com/boxalino/intelligence-integration-shopware/blob/d5d8c2c2077a7d710c5f40b465149ad17c1fb064/src/Storefront/Controller/SearchController.php#L51
+https://github.com/boxalino/intelligence-integration-shopware/src/Storefront/Controller/SearchController.php#L51
 
-###### 5. Adjust the templates
+###### 5. Updating the sorting
+
+To comply with Shopware6 way for adding sorting, we have designed a sorting handling class that has the map between a Boxalino field
+and a Shopware6/store fields
+https://github.com/boxalino/intelligence-framework-shopware/blob/master/src/Resources/config/services/api/page.xml#L35
+
+Firstly, follow the Shopware6 way of declaring new sorting fields
+Secondly, declare new fields to the collection
+
+###### 6. Adjust the templates
 
 For the search response we recommend to use a model load (as defined in your product list component).
 This will ensure proper price and stock display.
@@ -64,3 +75,5 @@ https://github.com/boxalino/intelligence-integration-shopware/blob/master/src/Re
 
 More templates for this use-case (sorting, toolbar, pagination, filters, etc):
 https://github.com/boxalino/intelligence-integration-shopware/tree/master/src/Resources/views/storefront/narrative/component
+
+

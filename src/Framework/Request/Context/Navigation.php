@@ -50,7 +50,7 @@ class Navigation extends ContextAbstract
      */
     public function getReturnFields() : array
     {
-        return ["id", "discountedPrice", "products_seo_url", "title", "products_image"];
+        return ["id", "products_group_id","discountedPrice", "products_seo_url", "title", "products_image"];
     }
 
 }

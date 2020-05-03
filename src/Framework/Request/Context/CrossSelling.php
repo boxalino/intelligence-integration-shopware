@@ -39,7 +39,7 @@ class CrossSelling extends ItemContextAbstract
      */
     public function getReturnFields() : array
     {
-        return ["id"];
+        return ["products_group_id"];
     }
 
 }
