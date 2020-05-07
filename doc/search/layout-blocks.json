@@ -47,12 +47,6 @@
         "widgets": [],
         "parameters": [
             {
-                "name": "content-resource",
-                "values": [
-                    "c-r=t"
-                ]
-            },
-            {
                 "name": "bx-facets",
                 "values": [
                     "accessor"
@@ -62,6 +56,12 @@
                 "name": "template",
                 "values": [
                     "@BoxalinoIntelligenceIntegration/storefront/narrative/component/listing/filter-panel.html.twig"
+                ]
+            },
+            {
+                "name": "model",
+                "values": [
+                    "Boxalino\\IntelligenceFramework\\Framework\\Content\\Listing\\ApiFacetModel"
                 ]
             }
         ],
@@ -220,6 +220,12 @@
                 "name": "bx-sort",
                 "values": [
                     "accessor"
+                ]
+            },
+            {
+                "name": "model",
+                "values": [
+                    "Boxalino\\IntelligenceFramework\\Framework\\Content\\Listing\\ApiSortingModel"
                 ]
             }
         ],

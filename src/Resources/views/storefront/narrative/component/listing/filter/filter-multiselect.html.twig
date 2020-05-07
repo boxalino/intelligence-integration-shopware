@@ -1,5 +1,4 @@
 {% set filterItemId = 'filter-' ~ name ~ '-' ~ random() %}
-{% set elements = facet.values %}
 
 {% if pluginSelector is not defined %}
     {% set pluginSelector = 'filter-multi-select' %}
@@ -13,14 +12,15 @@
         {% block component_filter_multi_select_toggle %}
             <button class="filter-panel-item-toggle btn{% if sidebar %} btn-block{% endif %}"
                     aria-expanded="false"
-                    {% if sidebar %}
+                {% if sidebar %}
                     data-toggle="collapse"
                     data-target="#{{ filterItemId }}"
-                    {% else %}
+                {% else %}
                     data-toggle="dropdown"
                     data-offset="0,8"
                     aria-haspopup="true"
-                    {% endif %}>
+                {% endif %}
+            >
 
                 {% block component_filter_multi_select_display_name %}
                     {{ displayName }}
@@ -39,11 +39,12 @@
         {% endblock %}
 
         {% block component_filter_multi_select_dropdown %}
-            <div class="filter-multi-select-dropdown filter-panel-item-dropdown{% if sidebar %} collapse{% else %} dropdown-menu{% endif %}"
+            <div class="filter-multi-select-dropdown filter-panel-item-dropdown
+                {% if sidebar %} collapse{% else %} dropdown-menu{% endif %}"
                  id="{{ filterItemId }}">
                 {% block component_filter_multi_select_list %}
                     <ul class="filter-multi-select-list">
-                        {% for element in elements %}
+                        {% for element in facet.values %}
                             {% block component_filter_multi_select_list_item %}
                                 <li class="filter-multi-select-list-item">
                                     {% block component_filter_multi_select_list_item_inner %}

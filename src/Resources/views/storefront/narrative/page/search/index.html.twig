@@ -1,0 +1,16 @@
+{#
+based on the narrative page element:
+https://github.com/boxalino/intelligence-framework-shopware/blob/master/src/Resources/views/storefront/element/cms-element-narrative-page.html.twig
+with the base from the default Shopware6 page/search/index.html.twig
+in order to maintain the div structure
+#}
+
+{% sw_extends '@Storefront/storefront/base.html.twig' %}
+
+{% block base_content %}
+    {% block page_search %}
+        <div class="cms-page search-page">
+            {% sw_include "@BoxalinoIntelligenceFramework/storefront/element/cms-element-narrative-content.html.twig" %}
+        </div>
+    {% endblock %}
+{% endblock %}

@@ -1,3 +1,9 @@
+{#
+@BoxalinoIntelligenceIntegration/storefront/narrative/component/listing/filter-panel.html.twig
+
+renders the facets as are set in the facet model
+(Boxalino/IntelligenceFramework/Framework/Conent/Listing/ApiFacetModel)
+#}
 {% block element_sidebar_filter %}
     {% if block.facets.count > 0 %}
         <div class="cms-element-sidebar-filter">
@@ -21,7 +27,6 @@
                      data-offcanvas-filter-content="true">
                     {% block component_filter_panel %}
                         {% set sidebar = block.section == 'sidebar' %}
-
                         {% block component_filter_panel_header %}
                             <div class="filter-panel-offcanvas-header">
                                 <h3 class="filter-panel-offcanvas-only">{{ "listing.filterTitleText"|trans }}</h3>
@@ -32,29 +37,121 @@
                             </div>
                         {% endblock %}
 
-                        {# @var listing \Shopware\Core\Framework\DataAbstractionLayer\Search\EntitySearchResult #}
                         {% block component_filter_panel_element %}
                             <div class="filter-panel{% if sidebar %} is--sidebar{% endif %}">
                                 {% block component_filter_panel_items_container %}
                                     <div class="filter-panel-items-container">
-
                                         {% for facet in block.facets %}
-                                            {% block component_filter_panel_item_properties %}
-                                                {% sw_include '@BoxalinoIntelligenceIntegration/storefront/narrative/component/listing/filter/filter-' + facet.visualisation + '.html.twig' with {
-                                                    facet: facet,
-                                                    sidebar: sidebar,
-                                                    name: facet.field,
-                                                    displayName: facet.label
-                                                } %}
-                                            {% endblock %}
+                                            {% if facet.values.count > 0 %}
+                                                {% block component_filter_panel_item_properties %}
+                                                    {#
+                                                        the visualisation property is defined in Boxalino Intelligence Admin, Facet menu; it is individually set per facet
+                                                        as a designer, you can append here as many types of visualisation and provide templating
+                                                    #}
+                                                    {% if facet.visualisation == 'range' %}
+                                                        {% sw_include '@BoxalinoIntelligenceIntegration/storefront/narrative/component/listing/filter/filter-range.html.twig' with {
+                                                            facet: facet,
+                                                            sidebar: sidebar,
+                                                            name: facet.field,
+                                                            displayName: facet.label
+                                                        } %}
+                                                    {% endif %}
+
+                                                    {% if facet.visualisation == 'stars' %}
+                                                        {% sw_include '@BoxalinoIntelligenceIntegration/storefront/narrative/component/listing/filter/filter-stars.html.twig' with {
+                                                            facet: facet,
+                                                            sidebar: sidebar,
+                                                            name: facet.field,
+                                                            displayName: facet.label
+                                                        } %}
+                                                    {% endif %}
+
+                                                    {% if facet.visualisation == 'multiselect' %}
+                                                        {% sw_include '@BoxalinoIntelligenceIntegration/storefront/narrative/component/listing/filter/filter-multiselect.html.twig' with {
+                                                            facet: facet,
+                                                            sidebar: sidebar,
+                                                            name: facet.field,
+                                                            displayName: facet.label
+                                                        } %}
+                                                    {% endif %}
+
+                                                    {% if facet.visualisation == 'enumeration' %}
+                                                        {% sw_include '@BoxalinoIntelligenceIntegration/storefront/narrative/component/listing/filter/filter-multiselect.html.twig' with {
+                                                            facet: facet,
+                                                            sidebar: sidebar,
+                                                            name: facet.field,
+                                                            displayName: facet.label
+                                                        } %}
+                                                    {% endif %}
+
+                                                    {# switch matches the "boolean" filter type#}
+                                                    {% if facet.visualisation == 'switch' %}
+                                                        {% sw_include '@BoxalinoIntelligenceIntegration/storefront/narrative/component/listing/filter/filter-switch.html.twig' with {
+                                                            facet: facet,
+                                                            sidebar: sidebar,
+                                                            name: facet.field,
+                                                            displayName: facet.label
+                                                        } %}
+                                                    {% endif %}
+
+                                                {% endblock %}
+                                            {% endif %}
                                         {% endfor %}
                                     </div>
                                 {% endblock %}
 
                                 {% block component_filter_panel_active_container %}
-                                    <div class="filter-panel-active-container">
+                                    {#
+                                        this is the default Shopware6 active filters containter;
+                                        the div class structure is required for the default Shopware6 JS listing.plugin.js
+                                        it is being hidden for consistency purposes, it is always empty
+                                    #}
+                                    <div class="filter-panel-active-container" style="display: none">
                                         {% block component_filter_panel_active_container_inner %}{% endblock %}
                                     </div>
+                                    {#
+                                        render the selected facets on every facet update; this allows for the facets to be updated on every load
+                                        "data-boxalino-integration" has to match the selector for the custom JS
+                                    #}
+                                    {% block boxalino_filter_panel_container_active %}
+                                        <div class="filter-panel-container-active" data-boxalino-integration="true">
+                                        {% if block.model.hasSelectedFacets() %}
+                                            {# the button based on the template of listing.plugin..js::getLabelTemplate() #}
+                                            {% for selectedFacet in block.model.getSelectedFacets() %}
+                                                {% for selectedValue in selectedFacet.getSelectedValues() %}
+                                                    {% if (selectedValue.minSelectedValue is not null) and (selectedValue.minSelectedValue != "0") %}
+                                                        <span class="filter-active">
+                                                            {{ selectedFacet.label }} {{ 'from'|trans|sw_sanitize }} {{ selectedValue.minSelectedValue }}
+                                                            <button class="filter-active-remove" data-id="{{ selectedValue.minSelectedValue }}">&times;</button>
+                                                        </span>
+                                                    {% endif %}
+                                                    {% if selectedValue.maxSelectedValue is not null %}
+                                                        <span class="filter-active">
+                                                            {{ selectedFacet.label }} {{ 'to'|trans|sw_sanitize }} {{ selectedValue.maxSelectedValue }}
+                                                            <button class="filter-active-remove" data-id="{{ selectedValue.maxSelectedValue }}">&times;</button>
+                                                        </span>
+                                                    {% endif %}
+                                                    {% if selectedValue.value is not null %}
+                                                        {# for boolean fields - the label of the field to be displayed #}
+                                                        {% if selectedFacet.visualisation == 'switch' %}
+                                                            <span class="filter-active">
+                                                            {{ selectedFacet.label }}
+                                                            <button class="filter-active-remove" data-id="{{ selectedFacet.field }}">&times;</button>
+                                                        </span>
+                                                            {% else %}
+                                                        <span class="filter-active">
+                                                            {{ selectedValue.value }}
+                                                            <button class="filter-active-remove" data-id="{{ selectedValue.value }}">&times;</button>
+                                                        </span>
+                                                            {% endif %}
+                                                    {% endif %}
+                                                {% endfor %}
+                                            {% endfor %}
+                                            {# the button based on the template of listing.plugin.js::getResetAllButtonTemplate() #}
+                                            <button class="filter-reset-all btn btn-sm btn-outline-danger">{{ 'listing.filterPanelResetAll'|trans|sw_sanitize }}</button>
+                                        {% endif %}
+                                    </div>
+                                    {% endblock %}
                                 {% endblock %}
                             </div>
                         {% endblock %}

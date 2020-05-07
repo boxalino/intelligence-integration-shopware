@@ -1,13 +1,15 @@
 {% block component_filter_multi_select_list_item %}
     <div class="custom-control custom-checkbox">
-        {% set id = element.value%} {# @TODO FIX TO element.id AFTER THE EXPORTER IS FIXED #}
+        {% set id = element.value %}
         {% set name = element.value %}
         {% block component_filter_multi_select_list_item_checkbox_input %}
             <input type="checkbox"
                    class="custom-control-input filter-multi-select-checkbox"
                    data-label="{{ name }}"
                    value="{{ id }}"
-                   id="{{ id }}">
+                   id="{{ id }}"
+                   {% if element.selected %} checked {% endif %}
+            >
         {% endblock %}
 
         {% block component_filter_multi_select_list_item_label_element %}

@@ -39,11 +39,26 @@ class Search extends SearchContextAbstract
     }
 
     /**
+     * Other fields can be: products_seo_url, products_image, discountedPrice, etc
      * @return array
      */
     public function getReturnFields() : array
     {
-        return ["id", "products_group_id", "discountedPrice", "products_seo_url", "title", "products_image"];
+        return ["id", "products_group_id", "title"];
+    }
+
+
+    /**
+     * Set the range properties following the presented structure
+     *
+     * @return array
+     */
+    public function getRangeProperties() : array
+    {
+        return [
+            "products_rating_average" => ['from' => 'products_rating_average', 'to' => 0],
+            "discountedPrice" => ['from' => 'min-price', 'to' => 'max-price']
+        ];
     }
 
 }

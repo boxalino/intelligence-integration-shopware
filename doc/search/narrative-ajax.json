@@ -1,8 +1,8 @@
 [
     {
-        "id": 742,
+        "id": 782,
         "status": null,
-        "uniqueKey": "search-default",
+        "uniqueKey": "search-ajax,
         "aliases": null,
         "widgets": [
             "search"
@@ -109,76 +109,6 @@
                                             "layoutModels": [],
                                             "visualElements": [
                                                 {
-                                                    "visualElementModelUniqueKey": "search_title",
-                                                    "label": "Search/Corrected search title",
-                                                    "parameters": [
-                                                        {
-                                                            "name": "title",
-                                                            "values": [
-                                                                "{\"de\":\"Sucherbnisse fur  '$.requests[0].searchQuery^' \",\"en\":\"Results for '$.requests[0].searchQuery^'\"}"
-                                                            ]
-                                                        },
-                                                        {
-                                                            "name": "bx_alternate_title",
-                                                            "values": [
-                                                                "{\"de\":\"Korrigierte suchergebnisse für '$.responses[0].correctedSearchQuery^' statt '$.requests[0].searchQuery^'\",\"en\":\"Search results for '$.responses[0].correctedSearchQuery^' instead of '$.requests[0].searchQuery^'\"}"
-                                                            ]
-                                                        },
-                                                        {
-                                                            "name": "accessor",
-                                                            "values": [
-                                                                ""
-                                                            ]
-                                                        }
-                                                    ],
-                                                    "visualElement": null,
-                                                    "subRenderings": [
-                                                        {
-                                                            "parameters": [
-                                                                null
-                                                            ],
-                                                            "rendering": {
-                                                                "contexts": [],
-                                                                "layoutModels": [],
-                                                                "visualElements": [],
-                                                                "parameters": null
-                                                            }
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    "visualElementModelUniqueKey": "facet_list",
-                                                    "label": "Facets",
-                                                    "parameters": [
-                                                        {
-                                                            "name": "section",
-                                                            "values": [
-                                                                ""
-                                                            ]
-                                                        },
-                                                        {
-                                                            "name": "accessor",
-                                                            "values": [
-                                                                ""
-                                                            ]
-                                                        }
-                                                    ],
-                                                    "visualElement": null,
-                                                    "subRenderings": [
-                                                        {
-                                                            "parameters": [
-                                                                null
-                                                            ],
-                                                            "rendering": {
-                                                                "contexts": [],
-                                                                "layoutModels": [],
-                                                                "visualElements": [],
-                                                                "parameters": null
-                                                            }
-                                                        }
-                                                    ]
-                                                },
-                                                {
                                                     "visualElementModelUniqueKey": "listing_wrapper",
                                                     "label": "Search listing section",
                                                     "parameters": [
@@ -200,8 +130,78 @@
                                                                 "layoutModels": [],
                                                                 "visualElements": [
                                                                     {
+                                                                        "visualElementModelUniqueKey": "search_title",
+                                                                        "label": "Search/Corrected search title",
+                                                                        "parameters": [
+                                                                            {
+                                                                                "name": "title",
+                                                                                "values": [
+                                                                                    "{\"de\":\"Sucherbnisse fur  '$.requests[0].searchQuery^' \",\"en\":\"Results for '$.requests[0].searchQuery^' \"}"
+                                                                                ]
+                                                                            },
+                                                                            {
+                                                                                "name": "bx_alternate_title",
+                                                                                "values": [
+                                                                                    "{\"de\":\"Korrigierte suchergebnisse für '$.responses[0].correctedSearchQuery^' statt '$.requests[0].searchQuery^'\",\"en\":\"Search results for '$.responses[0].correctedSearchQuery^' instead of '$.requests[0].searchQuery^'\"}"
+                                                                                ]
+                                                                            },
+                                                                            {
+                                                                                "name": "accessor",
+                                                                                "values": [
+                                                                                    ""
+                                                                                ]
+                                                                            }
+                                                                        ],
+                                                                        "visualElement": null,
+                                                                        "subRenderings": [
+                                                                            {
+                                                                                "parameters": [
+                                                                                    null
+                                                                                ],
+                                                                                "rendering": {
+                                                                                    "contexts": [],
+                                                                                    "layoutModels": [],
+                                                                                    "visualElements": [],
+                                                                                    "parameters": null
+                                                                                }
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    {
+                                                                        "visualElementModelUniqueKey": "facet_list",
+                                                                        "label": "Facets",
+                                                                        "parameters": [
+                                                                            {
+                                                                                "name": "section",
+                                                                                "values": [
+                                                                                    ""
+                                                                                ]
+                                                                            },
+                                                                            {
+                                                                                "name": "accessor",
+                                                                                "values": [
+                                                                                    ""
+                                                                                ]
+                                                                            }
+                                                                        ],
+                                                                        "visualElement": null,
+                                                                        "subRenderings": [
+                                                                            {
+                                                                                "parameters": [
+                                                                                    null
+                                                                                ],
+                                                                                "rendering": {
+                                                                                    "contexts": [],
+                                                                                    "layoutModels": [],
+                                                                                    "visualElements": [],
+                                                                                    "parameters": null
+                                                                                }
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    {
                                                                         "visualElementModelUniqueKey": "toolbar",
-                                                                        "label": null,
+                                                                        "label": "Toolbar",
                                                                         "parameters": [
                                                                             {
                                                                                 "name": "accessor",
@@ -280,7 +280,7 @@
                                                                     },
                                                                     {
                                                                         "visualElementModelUniqueKey": "product_list",
-                                                                        "label": null,
+                                                                        "label": "Product List",
                                                                         "parameters": [
                                                                             {
                                                                                 "name": "title",
@@ -363,7 +363,7 @@
                                                                     },
                                                                     {
                                                                         "visualElementModelUniqueKey": "pagination",
-                                                                        "label": null,
+                                                                        "label": "Pagination",
                                                                         "parameters": [
                                                                             {
                                                                                 "name": "accessor",

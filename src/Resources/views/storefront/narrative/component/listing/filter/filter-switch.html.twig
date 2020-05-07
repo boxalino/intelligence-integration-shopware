@@ -1,4 +1,15 @@
+{#
+the switch template is for boolean properties
+the facet values are generally 0/1 which are mirroring the behavior for true/false
+in this sample, if there are only options with the facet value set to "false" or "0" - the checkbox will be disabled
+#}
 {% block component_filter_boolean %}
+    {% set hitCount = 0 %}
+    {% for element in facet.values %}
+        {% if element.value == "1" %}
+            {% set hitCount = element.hitCount %}
+        {% endif %}
+    {% endfor %}
     <div class="filter-boolean filter-panel-item"
          data-filter-boolean="true"
          data-filter-boolean-options='{ "name": "{{ name }}", "displayName": "{{ displayName }}" }'>
@@ -10,13 +21,15 @@
                     <input type="checkbox"
                            class="filter-boolean-input custom-control-input"
                            id="{{ name }}"
-                           name="{{ name }}">
+                           name="{{ name }}"
+                           {% if hitCount == 0 %} disabled {% endif %}
+                    >
                 {% endblock %}
 
                 {% block component_filter_boolean_label %}
                     <label for="{{ name }}" class="filter-boolean-label custom-control-label">
                         {% block component_filter_boolean_display_name %}
-                            {{ displayName }} {% if facet.showCounter %}({{ element.hitCount }}) {% endif %}
+                            {{ displayName }} {% if facet.showCounter %}({{ hitCount }}){% endif %}
                         {% endblock %}
                     </label>
                 {% endblock %}

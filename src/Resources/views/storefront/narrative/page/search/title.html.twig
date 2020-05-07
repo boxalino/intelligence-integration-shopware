@@ -1,7 +1,7 @@
 {% block page_search_headline %}
     <h1 class="search-headline">
         {% block page_search_headline_text %}
-            {{ block.title[0] | sw_sanitize }}
+            {{ block.title[0] | sw_sanitize }}  {% if page.totalHitCount > 0 %} ({{ page.totalHitCount }}) {% endif %}
         {% endblock %}
     </h1>
 {% endblock %}

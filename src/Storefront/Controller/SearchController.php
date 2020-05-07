@@ -67,8 +67,9 @@ class SearchController extends ShopwareSearchController
 
             /**
              * the render template is a narrative page
+             * div-less narrative template: @BoxalinoIntelligenceFramework/storefront/element/cms-element-narrative-page.html.twig
              */
-            return $this->renderStorefront('@BoxalinoIntelligenceFramework/storefront/element/cms-element-narrative-page.html.twig', ['page' => $page]);
+            return $this->renderStorefront('@BoxalinoIntelligenceIntegration/storefront/narrative/page/search/index.html.twig', ['page' => $page]);
         } catch (\Throwable $exception) {
             /**
              * Fallback
@@ -99,6 +100,34 @@ class SearchController extends ShopwareSearchController
             $this->logger->warning("BoxalinoAPI: There was an issue with the autocomplete request " . $exception->getMessage());
             return $this->decorated->suggest($context, $request);
         }
+    }
+
+    /**
+     * @HttpCache()
+     * @RouteScope(scopes={"storefront"})
+     * @Route("/widgets/search/{search}", name="widgets.search.pagelet", methods={"GET", "POST"}, defaults={"XmlHttpRequest"=true})
+     *
+     * @throws MissingRequestParameterException
+     */
+    public function pagelet(Request $request, SalesChannelContext $context): Response
+    {
+        try{
+            $page = $this->searchApiPageLoader->load($request, $context);
+
+            /**
+             * by DEFAULT, Shopware6 does not update facets&search page title on pagelet, only the content within cmsProductListingSelector
+             * (as seen in the vendor/shopware/platform/src/Storefront/Resources/app/storefront/src/plugin/listing/listing.plugin.js, renderResponse action)
+             */
+            return $this->renderStorefront('@BoxalinoIntelligenceFramework/storefront/element/cms-element-narrative-content.html.twig', ['page' => $page]);
+        } catch (\Throwable $exception)
+        {
+            /**
+             * Fallback
+             */
+            $this->logger->warning("BoxalinoAPI: There was an issue with the pagelet request " . $exception->getMessage());
+            return $this->decorated->pagelet($request, $context);
+        }
+
     }
 
 }

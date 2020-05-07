@@ -11,22 +11,38 @@ uses a loop through Boxalino response blocks (block.blocks) to render the other 
 (ex: toolbar, product list or other scenarios -- no products, subphrases, mix of content, etc)
 #}
 {% block element_product_listing %}
-
+    {# as seen in default templates:
+    storefront/element/cms-element-product-listing.html.twig
+    storefront/page/search/search-pagelet.html.twig
+    #}
     {% set listingColumns = 'col-sm-6 col-lg-4 col-xl-3' %}
     {% if block.section and block.section == 'sidebar' %}
         {% set listingColumns = 'col-sm-6 col-lg-6 col-xl-4' %}
     {% endif %}
+    {% set sidebar = block.section == 'sidebar' %}
 
-    {% set filterUrl = null %}
-    {% set dataUrl = null %}
+    {% if filterUrl is not defined %}
+        {% set filterUrl = null %}
+    {% endif %}
+    {% if dataUrl is not defined %}
+        {% set dataUrl = null %}
+        {% if page.searchTerm is defined %}
+            {% set dataUrl = url('widgets.search.pagelet', { search: page.searchTerm }) %}
+        {% endif %}
+    {% endif %}
+    {% if params is not defined %}
+        {% if page.searchTerm is defined %}
+            {% set params = {'no-aggregations': 1, search: page.searchTerm } %}
+        {% else %}
+            {% set params = {'no-aggregations': 1 } %}
+        {% endif %}
+    {% endif %}
 
     {% if block.currentFilters.navigationId %}
         {% set filterUrl = url('frontend.cms.navigation.filter', { navigationId: block.currentFilters.navigationId }) %}
         {% set dataUrl = url('frontend.cms.navigation.page', { navigationId: block.currentFilters.navigationId }) %}
     {% endif %}
 
-    {% set sidebar = block.section == 'sidebar' %}
-    {% set params = {'no-aggregations': 1 } %}
 
     {% block element_product_listing_wrapper %}
         <div class="cms-element-product-listing-wrapper"
