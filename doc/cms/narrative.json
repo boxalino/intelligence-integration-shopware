@@ -1,0 +1,202 @@
+[
+    {
+        "id": 728,
+        "status": null,
+        "uniqueKey": "home",
+        "aliases": null,
+        "widgets": [
+            "home"
+        ],
+        "allWidgets": null,
+        "parametersJsonScheme": null,
+        "seoContent": {
+            "title": [
+                {
+                    "language": "de",
+                    "value": ""
+                },
+                {
+                    "language": "fr",
+                    "value": ""
+                }
+            ],
+            "metaTags": [],
+            "h1": [
+                {
+                    "language": "de",
+                    "value": ""
+                },
+                {
+                    "language": "fr",
+                    "value": ""
+                }
+            ],
+            "others": [
+                {
+                    "name": "breadcrumbs",
+                    "value": [
+                        {
+                            "language": "de",
+                            "value": ""
+                        },
+                        {
+                            "language": "fr",
+                            "value": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        "contexts": [],
+        "layoutModels": null,
+        "acts": [
+            {
+                "parameters": [
+                    null
+                ],
+                "chapter": {
+                    "format": "CPOActChapter",
+                    "contexts": [],
+                    "subActs": [],
+                    "journeyStepUniqueKeys": null,
+                    "callToActions": null,
+                    "renderings": [
+                        {
+                            "parameters": [
+                                null
+                            ],
+                            "rendering": {
+                                "contexts": [],
+                                "layoutModels": [],
+                                "visualElements": [
+                                    {
+                                        "visualElementModelUniqueKey": "product_slider",
+                                        "label": "Dynamic Product Slider",
+                                        "parameters": [
+                                            {
+                                                "name": "title",
+                                                "values": [
+                                                    "{\"de\":\"Ihre persöhnliche Empfehlungen\",\"en\":\"Our recommendations for you\"}"
+                                                ]
+                                            },
+                                            {
+                                                "name": "accessor",
+                                                "values": [
+                                                    ""
+                                                ]
+                                            },
+                                            {
+                                                "name": "displayMode",
+                                                "values": [
+                                                    "standard"
+                                                ]
+                                            },
+                                            {
+                                                "name": "verticalAlign",
+                                                "values": [
+                                                    ""
+                                                ]
+                                            },
+                                            {
+                                                "name": "navigation",
+                                                "values": [
+                                                    "true"
+                                                ]
+                                            },
+                                            {
+                                                "name": "rotate",
+                                                "values": [
+                                                    "true"
+                                                ]
+                                            },
+                                            {
+                                                "name": "border",
+                                                "values": [
+                                                    "true"
+                                                ]
+                                            },
+                                            {
+                                                "name": "elMinWidth",
+                                                "values": [
+                                                    "150px"
+                                                ]
+                                            },
+                                            {
+                                                "name": "boxLayout",
+                                                "values": [
+                                                    "standard"
+                                                ]
+                                            }
+                                        ],
+                                        "visualElement": null,
+                                        "subRenderings": [
+                                            {
+                                                "parameters": [
+                                                    null
+                                                ],
+                                                "rendering": {
+                                                    "contexts": [],
+                                                    "layoutModels": [],
+                                                    "visualElements": [
+                                                        {
+                                                            "visualElementModelUniqueKey": "product",
+                                                            "label": "Dynamic product",
+                                                            "parameters": [
+                                                                {
+                                                                    "name": "accessor",
+                                                                    "values": [
+                                                                        ""
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "name": "layout",
+                                                                    "values": [
+                                                                        ""
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "name": "displayMode",
+                                                                    "values": [
+                                                                        ""
+                                                                    ]
+                                                                }
+                                                            ],
+                                                            "visualElement": null,
+                                                            "subRenderings": [
+                                                                {
+                                                                    "parameters": [
+                                                                        null
+                                                                    ],
+                                                                    "rendering": {
+                                                                        "contexts": [],
+                                                                        "layoutModels": [],
+                                                                        "visualElements": [],
+                                                                        "parameters": null
+                                                                    }
+                                                                }
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "parameters": null
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "parameters": null
+                            }
+                        }
+                    ],
+                    "parameters": null
+                }
+            }
+        ],
+        "parameters": [],
+        "route": "narratives",
+        "reqParams": null,
+        "$fromServer": true,
+        "parentResource": null,
+        "restangularCollection": false,
+        "isSelected": true
+    }
+]

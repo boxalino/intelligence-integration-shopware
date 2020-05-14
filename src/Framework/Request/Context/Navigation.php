@@ -2,9 +2,7 @@
 namespace Boxalino\IntelligenceIntegration\Framework\Request\Context;
 
 use Boxalino\IntelligenceFramework\Framework\Request\ContextAbstract;
-use GuzzleHttp\Client;
-use JsonSerializable;
-use Psr\Http\Message\RequestInterface;
+use Boxalino\IntelligenceFramework\Framework\Request\ListingContextAbstract;
 use Shopware\Core\Content\Product\Aggregate\ProductVisibility\ProductVisibilityDefinition;
 use Shopware\Core\System\SalesChannel\SalesChannelContext;
 use Symfony\Component\HttpFoundation\Request;
@@ -17,7 +15,7 @@ use Symfony\Component\HttpFoundation\Request;
  *
  * @package Boxalino\IntelligenceIntegration\Framework\Request\Context
  */
-class Navigation extends ContextAbstract
+class Navigation extends ListingContextAbstract
 {
     /**
      * @return int
@@ -51,6 +49,19 @@ class Navigation extends ContextAbstract
     public function getReturnFields() : array
     {
         return ["id", "products_group_id","discountedPrice", "products_seo_url", "title", "products_image"];
+    }
+
+    /**
+     * Set the range properties following the presented structure
+     *
+     * @return array
+     */
+    public function getRangeProperties() : array
+    {
+        return [
+            "products_rating_average" => ['from' => 'products_rating_average', 'to' => 0],
+            "discountedPrice" => ['from' => 'min-price', 'to' => 'max-price']
+        ];
     }
 
 }

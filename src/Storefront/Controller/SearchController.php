@@ -4,16 +4,14 @@ namespace Boxalino\IntelligenceIntegration\Storefront\Controller;
 use Boxalino\IntelligenceFramework\Framework\Content\Page\ApiPageLoader as AutocompletePageLoader;
 use Boxalino\IntelligenceFramework\Framework\Content\Page\ApiPageLoader as SearchPageLoader;
 use Psr\Log\LoggerInterface;
-use Shopware\Core\Framework\Routing\Annotation\RouteScope;
 use Shopware\Core\Framework\Routing\Exception\MissingRequestParameterException;
 use Shopware\Core\System\SalesChannel\SalesChannelContext;
-use Shopware\Storefront\Framework\Cache\Annotation\HttpCache;
-use Shopware\Storefront\Page\GenericPageLoader;
-use Symfony\Component\Config\Definition\Exception\Exception;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
 use Shopware\Storefront\Controller\SearchController as ShopwareSearchController;
+use Shopware\Core\Framework\Routing\Annotation\RouteScope;
+use Shopware\Storefront\Framework\Cache\Annotation\HttpCache;
+use Symfony\Component\Routing\Annotation\Route;
 
 /**
  * @RouteScope(scopes={"storefront"})

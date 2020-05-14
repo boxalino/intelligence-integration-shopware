@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <!-- Shopware6 definition of the CMS use -->
+        <service id="boxalino.integration.context.cms"
+                 class="Boxalino\IntelligenceIntegration\Framework\Request\Context\Cms"
+                 parent="boxalino.request.context.cms">
+            <call method="setRequestDefinition">
+                <argument type="service" id="Boxalino\IntelligenceFramework\Service\Api\Request\Definition\ListingRequestDefinitionInterface"/>
+            </call>
+<!--            setWidget, setHitCount, setGroupBy and other data is inherited from the CMS element configuration -->
+        </service>
+
+        <!-- Shopware6 CMS loader extension with API call -->
+        <service id="boxalino.api.integration.loader.cms"
+                 class="Boxalino\IntelligenceFramework\Framework\Content\Page\ApiCmsLoader"
+                 parent="boxalino.api.content.page.cms">
+            <call method="setApiContextInterface">
+                <argument type="service" id="boxalino.integration.context.cms"/>
+            </call>
+        </service>
+
+        <!-- Crosselling Loader event subscriber to be added when wanting to use it -->
+        <service id="Boxalino\IntelligenceFramework\Framework\Content\Subscriber\ApiCmsLoaderSubscriber">
+            <argument type="service" id="boxalino.api.integration.loader.cms"/>
+            <argument type="service" id="monolog.logger.boxalino-integration"/>
+            <tag name="kernel.event_subscriber"/>
+        </service>
+    </services>
+</container>

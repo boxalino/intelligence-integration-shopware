@@ -22,6 +22,7 @@
         <import resource="services/api/autocomplete.xml"/>
         <import resource="services/api/search.xml"/>
         <import resource="services/api/crossselling.xml"/>
+        <import resource="services/api/cms.xml"/>
     </imports>
 
     <services>
@@ -29,9 +30,11 @@
         <service id="Boxalino\IntelligenceIntegration\ScheduledTask\ExporterFull">
             <tag name="shopware.scheduled.task" />
         </service>
+
         <!-- scheduled task handler with link to the task scheduler class -->
         <service id="Boxalino\IntelligenceIntegration\ScheduledTask\ExporterFullHandler"
                  parent="Boxalino\IntelligenceFramework\ScheduledTask\ExporterFullHandlerAbstract">
+<!--            <call method="setAccount"><argument type="string">your_account</argument></call>-->
             <tag name="messenger.message_handler" />
         </service>
     </services>

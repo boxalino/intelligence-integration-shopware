@@ -5,22 +5,22 @@ the response content is accessed via : block
 all JSON schema properties are returned in an array, so if a single value is expected, use block.property[0] to access it
 #}
 {% block element_product_slider %}
-    <div class="cms-element-product-slider {% if block.displayMode[0] == "standard" and block.verticalAlign[0] %} has-vertical-alignment{% endif %}">
+    <div class="cms-element-product-slider {% if block.displayMode[0] == "standard" and block.verticalAlign[0] != "" %} has-vertical-alignment{% endif %}">
         {% block element_product_slider_alignment %}
-            {% if block.verticalAlign[0] %}
+            {% if block.verticalAlign[0] != "" %}
                 <div class="cms-element-alignment{% if block.verticalAlign[0] == "center" %} align-self-center{% elseif block.verticalAlign[0] == "flex-end" %} align-self-end{% else %} align-self-start{% endif %}">
             {% endif %}
-            <div class="base-slider product-slider{% if block.border[0] %} has-border{% endif %}{% if block.navigation[0] %} has-nav{% endif %}"
+            <div class="base-slider product-slider{% if block.border[0] == "true" %} has-border{% endif %}{% if block.navigation[0] == "true" %} has-nav{% endif %}"
                  data-product-slider="true"
                  data-product-slider-options='{
-                        {% if elMinWidth %}"productboxMinWidth": "{{ block.elMinWidth[0] }}",{% endif %}
+                        {% if block.elMinWidth[0] != "" %}"productboxMinWidth": "{{ block.elMinWidth[0] }}",{% endif %}
                         "slider": {
                             "gutter": 30,
                             "autoplayButtonOutput": false,
                             "nav": false,
-                            "controls": {% if block.navigation[0] %}true{% else %}false{% endif %},
-                            {% if not block.navigation[0] %}"mouseDrag": true,{% endif %}
-                            "autoplay": {% if block.rotate[0] %}true{% else %}false{% endif %}
+                            "controls": {% if block.navigation[0] == "true" %}true{% else %}false{% endif %},
+                            {% if not block.navigation[0] == "true" %}"mouseDrag": true,{% endif %}
+                            "autoplay": {% if block.rotate[0] == "true" %}true{% else %}false{% endif %}
                         }
                      }'>
 
@@ -69,17 +69,17 @@ all JSON schema properties are returned in an array, so if a single value is exp
                     {% endblock %}
 
                     {% block element_product_slider_controls %}
-                        {% if block.navigation[0] %}
+                        {% if block.navigation[0] == "true" %}
                             <div class="product-slider-controls-container">
                                 <div class="base-slider-controls"
                                      data-product-slider-controls="true">
                                     {% block element_product_slider_controls_items %}
-                                        <button class="base-slider-controls-prev product-slider-controls-prev{% if block.border[0] %} has-border{% endif %}">
+                                        <button class="base-slider-controls-prev product-slider-controls-prev{% if block.border[0] == "true" %} has-border{% endif %}">
                                             {% block element_product_slider_controls_items_prev_icon %}
                                                 {% sw_icon 'arrow-head-left' %}
                                             {% endblock %}
                                         </button>
-                                        <button class="base-slider-controls-next product-slider-controls-next{% if block.border[0] %} has-border{% endif %}">
+                                        <button class="base-slider-controls-next product-slider-controls-next{% if block.border[0] == "true" %} has-border{% endif %}">
                                             {% block element_product_slider_controls_items_next_icon %}
                                                 {% sw_icon 'arrow-head-right' %}
                                             {% endblock %}
@@ -91,7 +91,7 @@ all JSON schema properties are returned in an array, so if a single value is exp
                     {% endblock %}
                 {% endblock %}
             </div>
-            {% if block.verticalAlign[0] %}
+            {% if block.verticalAlign[0] == "true" %}
                 </div>
             {% endif %}
         {% endblock %}

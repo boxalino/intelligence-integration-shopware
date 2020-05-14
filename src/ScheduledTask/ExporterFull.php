@@ -14,7 +14,7 @@ class ExporterFull extends ScheduledTask
 
     public static function getTaskName(): string
     {
-        return 'boxalinointelligence.export.full';
+        return 'boxalino.export.full';
     }
 
     /**
@@ -24,7 +24,7 @@ class ExporterFull extends ScheduledTask
      */
     public static function getDefaultInterval(): int
     {
-        return 86400; // 1day
+        return 200; // 1day
     }
 
 }

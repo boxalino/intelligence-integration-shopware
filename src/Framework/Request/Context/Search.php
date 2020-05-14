@@ -1,11 +1,7 @@
 <?php declare(strict_types=1);
 namespace Boxalino\IntelligenceIntegration\Framework\Request\Context;
 
-use Boxalino\IntelligenceFramework\Framework\Request\ContextAbstract;
 use Boxalino\IntelligenceFramework\Framework\Request\SearchContextAbstract;
-use GuzzleHttp\Client;
-use JsonSerializable;
-use Psr\Http\Message\RequestInterface;
 use Shopware\Core\Content\Product\Aggregate\ProductVisibility\ProductVisibilityDefinition;
 use Shopware\Core\System\SalesChannel\SalesChannelContext;
 use Symfony\Component\HttpFoundation\Request;
