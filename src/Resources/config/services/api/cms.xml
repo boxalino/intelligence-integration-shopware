@@ -23,7 +23,7 @@
             </call>
         </service>
 
-        <!-- Crosselling Loader event subscriber to be added when wanting to use it -->
+        <!-- CMS Loader event subscriber to be added when wanting to use it -->
         <service id="Boxalino\IntelligenceFramework\Framework\Content\Subscriber\ApiCmsLoaderSubscriber">
             <argument type="service" id="boxalino.api.integration.loader.cms"/>
             <argument type="service" id="monolog.logger.boxalino-integration"/>
