@@ -159,6 +159,12 @@
                                                                     "values": [
                                                                         ""
                                                                     ]
+                                                                },
+                                                                {
+                                                                    "name": "boxLayout",
+                                                                    "values": [
+                                                                        ""
+                                                                    ]
                                                                 }
                                                             ],
                                                             "visualElement": null,

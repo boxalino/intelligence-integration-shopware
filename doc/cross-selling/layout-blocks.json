@@ -2,7 +2,7 @@
     {
         "id": 786,
         "uniqueKey": "product",
-        "parametersJsonScheme": "{\n  \"title\": \"Product\",\n  \"type\": \"object\",\n  \"properties\": {\n\"layout\": {\n      \"type\": \"string\",\n      \"description\": \"per your Shopware options (minimal, standard, image)\"\n    },\n\"displayMode\": {\n      \"type\": \"string\",\n      \"description\": \"per your Shopware options for displayMode (cover, standard, contain, etc)\"\n    },\n    \"accessor\": {\n      \"type\": \"string\",\n      \"description\": \"hits accessor (typically leave empty)\"\n    }\n  }\n}",
+        "parametersJsonScheme": "{\n  \"title\": \"Product\",\n  \"type\": \"object\",\n  \"properties\": {\n    \"displayMode\": {\n      \"title\": \"Display Mode\",\n      \"type\": \"string\",\n      \"enum\": [\n        \"\",\n        \"standard\",\n        \"cover\",\n        \"contain\"\n      ]\n    },\n    \"boxLayout\": {\n      \"title\": \"Layout Type\",\n      \"type\": \"string\",\n      \"enum\": [\n         \"\",\n        \"standard\",\n        \"image\",\n        \"minimal\"\n      ]\n    },\n    \"accessor\": {\n      \"type\": \"string\",\n      \"description\": \"hits accessor (typically leave empty)\"\n    }\n  }\n}",
         "format": null,
         "widgets": [],
         "parameters": [
@@ -16,6 +16,12 @@
                 "name": "bx-hit",
                 "values": [
                     "accessor"
+                ]
+            },
+            {
+                "name": "content-resource",
+                "values": [
+                    "c-r=t"
                 ]
             }
         ],
@@ -45,6 +51,12 @@
                 "values": [
                     "boxalino.api.content.collection"
                 ]
+            },
+            {
+                "name": "content-resource",
+                "values": [
+                    "c-r=f"
+                ]
             }
         ],
         "subRenderings": [],
@@ -53,6 +65,7 @@
         "$fromServer": true,
         "parentResource": null,
         "restangularCollection": false,
-        "isSelected": true
+        "isSelected": true,
+        "contentResource": false
     }
 ]

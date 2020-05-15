@@ -7,12 +7,6 @@
         "widgets": [],
         "parameters": [
             {
-                "name": "content-resource",
-                "values": [
-                    "c-r=t"
-                ]
-            },
-            {
                 "name": "bx-acQueries",
                 "values": [
                     "accessor"
@@ -22,6 +16,12 @@
                 "name": "template",
                 "values": [
                     "@BoxalinoIntelligenceIntegration/storefront/narrative/layout/header/suggest/suggestion-list.html.twig"
+                ]
+            },
+            {
+                "name": "content-resource",
+                "values": [
+                    "c-r=f"
                 ]
             }
         ],
@@ -70,7 +70,7 @@
     {
         "id": 784,
         "uniqueKey": "autocomplete_text",
-        "parametersJsonScheme": "{\n  \"title\": \"Autocomplete Text\",\n  \"type\": \"object\",\n  \"properties\": {\n    \"accessor\": {\n      \"type\": \"string\",\n      \"description\": \"autocomplete accessor (typically leave empty)\"\n    }\n  }\n}",
+        "parametersJsonScheme": "{\n  \"title\": \"Autocomplete text\",\n  \"type\": \"object\",\n  \"properties\": {\n    \"accessor\": {\n      \"type\": \"string\",\n      \"description\": \"hits accessor (typically leave empty)\"\n    }\n  }\n}",
         "format": null,
         "widgets": [],
         "parameters": [
@@ -115,15 +115,15 @@
                 ]
             },
             {
-                "name": "content-resource",
-                "values": [
-                    "c-r=t"
-                ]
-            },
-            {
                 "name": "bx-hit",
                 "values": [
                     "accessor"
+                ]
+            },
+            {
+                "name": "content-resource",
+                "values": [
+                    "c-r=t"
                 ]
             }
         ],

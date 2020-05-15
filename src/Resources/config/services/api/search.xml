@@ -11,7 +11,7 @@
                 <!-- the service defined in BoxalinoIntelligenceFramework OR design a custom one -->
                 <argument type="service" id="Boxalino\IntelligenceFramework\Service\Api\Request\Definition\SearchRequestDefinitionInterface"/>
             </call>
-            <call method="setWidget"><argument>search_ajax</argument></call>
+            <call method="setWidget"><argument>search</argument></call>
             <!-- <call method="setGroupBy"><argument>id</argument></call>-->
             <!-- <call method="setHitCount"><argument>20</argument></call>-->
              <call method="setSubPhrasesCount"><argument>3</argument></call>

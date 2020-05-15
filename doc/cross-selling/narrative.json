@@ -115,13 +115,19 @@
                                                                 {
                                                                     "name": "displayMode",
                                                                     "values": [
-                                                                        ""
+                                                                        "standard"
                                                                     ]
                                                                 },
                                                                 {
                                                                     "name": "accessor",
                                                                     "values": [
                                                                         ""
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "name": "boxLayout",
+                                                                    "values": [
+                                                                        "standard"
                                                                     ]
                                                                 }
                                                             ],
@@ -192,13 +198,19 @@
                                                                 {
                                                                     "name": "displayMode",
                                                                     "values": [
-                                                                        ""
+                                                                        "cover"
                                                                     ]
                                                                 },
                                                                 {
                                                                     "name": "accessor",
                                                                     "values": [
                                                                         ""
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "name": "boxLayout",
+                                                                    "values": [
+                                                                        "image"
                                                                     ]
                                                                 }
                                                             ],
@@ -269,13 +281,19 @@
                                                                 {
                                                                     "name": "displayMode",
                                                                     "values": [
-                                                                        ""
+                                                                        "contain"
                                                                     ]
                                                                 },
                                                                 {
                                                                     "name": "accessor",
                                                                     "values": [
                                                                         ""
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "name": "boxLayout",
+                                                                    "values": [
+                                                                        "minimal"
                                                                     ]
                                                                 }
                                                             ],
@@ -346,13 +364,19 @@
                                                                 {
                                                                     "name": "displayMode",
                                                                     "values": [
-                                                                        ""
+                                                                        "standard"
                                                                     ]
                                                                 },
                                                                 {
                                                                     "name": "accessor",
                                                                     "values": [
                                                                         ""
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "name": "boxLayout",
+                                                                    "values": [
+                                                                        "minimal"
                                                                     ]
                                                                 }
                                                             ],

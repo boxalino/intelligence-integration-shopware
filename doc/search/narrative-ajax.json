@@ -2,7 +2,7 @@
     {
         "id": 782,
         "status": null,
-        "uniqueKey": "search-ajax,
+        "uniqueKey": "search-ajax",
         "aliases": null,
         "widgets": [
             "search"
@@ -117,6 +117,12 @@
                                                             "values": [
                                                                 ""
                                                             ]
+                                                        },
+                                                        {
+                                                            "name": "accessor",
+                                                            "values": [
+                                                                ""
+                                                            ]
                                                         }
                                                     ],
                                                     "visualElement": null,
@@ -150,6 +156,12 @@
                                                                                 "values": [
                                                                                     ""
                                                                                 ]
+                                                                            },
+                                                                            {
+                                                                                "name": "corrected_title",
+                                                                                "values": [
+                                                                                    "{\"de\":\"\",\"en\":\"\"}"
+                                                                                ]
                                                                             }
                                                                         ],
                                                                         "visualElement": null,
@@ -168,22 +180,9 @@
                                                                         ]
                                                                     },
                                                                     {
-                                                                        "visualElementModelUniqueKey": "facet_list",
-                                                                        "label": "Facets",
-                                                                        "parameters": [
-                                                                            {
-                                                                                "name": "section",
-                                                                                "values": [
-                                                                                    ""
-                                                                                ]
-                                                                            },
-                                                                            {
-                                                                                "name": "accessor",
-                                                                                "values": [
-                                                                                    ""
-                                                                                ]
-                                                                            }
-                                                                        ],
+                                                                        "visualElementModelUniqueKey": "facets",
+                                                                        "label": "Facets - get updated",
+                                                                        "parameters": [],
                                                                         "visualElement": null,
                                                                         "subRenderings": [
                                                                             {
@@ -201,7 +200,7 @@
                                                                     },
                                                                     {
                                                                         "visualElementModelUniqueKey": "toolbar",
-                                                                        "label": "Toolbar",
+                                                                        "label": "Toolbar with sorting&pagination",
                                                                         "parameters": [
                                                                             {
                                                                                 "name": "accessor",
@@ -219,60 +218,7 @@
                                                                                 "rendering": {
                                                                                     "contexts": [],
                                                                                     "layoutModels": [],
-                                                                                    "visualElements": [
-                                                                                        {
-                                                                                            "visualElementModelUniqueKey": "pagination",
-                                                                                            "label": null,
-                                                                                            "parameters": [
-                                                                                                {
-                                                                                                    "name": "accessor",
-                                                                                                    "values": [
-                                                                                                        ""
-                                                                                                    ]
-                                                                                                }
-                                                                                            ],
-                                                                                            "visualElement": null,
-                                                                                            "subRenderings": [
-                                                                                                {
-                                                                                                    "parameters": [
-                                                                                                        null
-                                                                                                    ],
-                                                                                                    "rendering": {
-                                                                                                        "contexts": [],
-                                                                                                        "layoutModels": [],
-                                                                                                        "visualElements": [],
-                                                                                                        "parameters": null
-                                                                                                    }
-                                                                                                }
-                                                                                            ]
-                                                                                        },
-                                                                                        {
-                                                                                            "visualElementModelUniqueKey": "sorting",
-                                                                                            "label": null,
-                                                                                            "parameters": [
-                                                                                                {
-                                                                                                    "name": "accessor",
-                                                                                                    "values": [
-                                                                                                        ""
-                                                                                                    ]
-                                                                                                }
-                                                                                            ],
-                                                                                            "visualElement": null,
-                                                                                            "subRenderings": [
-                                                                                                {
-                                                                                                    "parameters": [
-                                                                                                        null
-                                                                                                    ],
-                                                                                                    "rendering": {
-                                                                                                        "contexts": [],
-                                                                                                        "layoutModels": [],
-                                                                                                        "visualElements": [],
-                                                                                                        "parameters": null
-                                                                                                    }
-                                                                                                }
-                                                                                            ]
-                                                                                        }
-                                                                                    ],
+                                                                                    "visualElements": [],
                                                                                     "parameters": null
                                                                                 }
                                                                             }
@@ -335,6 +281,12 @@
                                                                                                 },
                                                                                                 {
                                                                                                     "name": "displayMode",
+                                                                                                    "values": [
+                                                                                                        "standard"
+                                                                                                    ]
+                                                                                                },
+                                                                                                {
+                                                                                                    "name": "boxLayout",
                                                                                                     "values": [
                                                                                                         "standard"
                                                                                                     ]
@@ -488,7 +440,7 @@
                                                                 "label": "Subphrases products sections",
                                                                 "parameters": [
                                                                     {
-                                                                        "name": "section",
+                                                                        "name": "accessor",
                                                                         "values": [
                                                                             ""
                                                                         ]
@@ -545,7 +497,7 @@
                                                                                                 "visualElements": [
                                                                                                     {
                                                                                                         "visualElementModelUniqueKey": "product",
-                                                                                                        "label": null,
+                                                                                                        "label": "Product box",
                                                                                                         "parameters": [
                                                                                                             {
                                                                                                                 "name": "layout",
@@ -561,6 +513,12 @@
                                                                                                             },
                                                                                                             {
                                                                                                                 "name": "accessor",
+                                                                                                                "values": [
+                                                                                                                    ""
+                                                                                                                ]
+                                                                                                            },
+                                                                                                            {
+                                                                                                                "name": "boxLayout",
                                                                                                                 "values": [
                                                                                                                     ""
                                                                                                                 ]
@@ -649,7 +607,7 @@
                                                                 "label": "No results products",
                                                                 "parameters": [
                                                                     {
-                                                                        "name": "section",
+                                                                        "name": "accessor",
                                                                         "values": [
                                                                             ""
                                                                         ]
@@ -712,7 +670,7 @@
                                                                                                 "visualElements": [
                                                                                                     {
                                                                                                         "visualElementModelUniqueKey": "product",
-                                                                                                        "label": null,
+                                                                                                        "label": "Simple product",
                                                                                                         "parameters": [
                                                                                                             {
                                                                                                                 "name": "layout",
@@ -736,6 +694,12 @@
                                                                                                                 "name": "hitCount",
                                                                                                                 "values": [
                                                                                                                     "8"
+                                                                                                                ]
+                                                                                                            },
+                                                                                                            {
+                                                                                                                "name": "boxLayout",
+                                                                                                                "values": [
+                                                                                                                    "image"
                                                                                                                 ]
                                                                                                             }
                                                                                                         ],

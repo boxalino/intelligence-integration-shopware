@@ -1,0 +1,531 @@
+[
+    {
+        "id": 787,
+        "status": null,
+        "uniqueKey": "navigation",
+        "aliases": null,
+        "widgets": [
+            "navigation"
+        ],
+        "allWidgets": null,
+        "parametersJsonScheme": null,
+        "seoContent": {
+            "title": [
+                {
+                    "language": "de",
+                    "value": ""
+                },
+                {
+                    "language": "en",
+                    "value": ""
+                }
+            ],
+            "metaTags": [],
+            "h1": [
+                {
+                    "language": "de",
+                    "value": ""
+                },
+                {
+                    "language": "en",
+                    "value": ""
+                }
+            ],
+            "others": [
+                {
+                    "name": "breadcrumbs",
+                    "value": [
+                        {
+                            "language": "de",
+                            "value": ""
+                        },
+                        {
+                            "language": "en",
+                            "value": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        "contexts": [],
+        "layoutModels": null,
+        "acts": [
+            {
+                "parameters": [
+                    null
+                ],
+                "chapter": {
+                    "format": "CPOActBranching",
+                    "contexts": [
+                        {
+                            "choiceIds": [],
+                            "journeySteps": [],
+                            "variantIds": [],
+                            "excludedUseCaseIds": [],
+                            "languages": [],
+                            "queryTexts": [],
+                            "emptyQuery": null,
+                            "fromIndex": null,
+                            "toIndex": null,
+                            "contextItems": [],
+                            "contextParameters": [
+                                {
+                                    "name": "position",
+                                    "values": [
+                                        "sidebar"
+                                    ]
+                                }
+                            ],
+                            "orContextParameters": null,
+                            "checkOtherContextParametersNotSetExclusive": null,
+                            "checkOtherContextParametersNotSetList": [],
+                            "filters": [],
+                            "orFilters": null,
+                            "checkOtherFiltersNotSetExclusive": null,
+                            "checkOtherFiltersNotSetList": [],
+                            "segmentationUniqueKeys": [],
+                            "scriptConditions": [],
+                            "orScriptConditions": null
+                        }
+                    ],
+                    "subActs": [
+                        {
+                            "parameters": [
+                                null
+                            ],
+                            "act": {
+                                "format": "CPOActChapter",
+                                "contexts": [],
+                                "subActs": [],
+                                "journeyStepUniqueKeys": null,
+                                "callToActions": null,
+                                "renderings": [
+                                    {
+                                        "parameters": [
+                                            null
+                                        ],
+                                        "rendering": {
+                                            "contexts": [],
+                                            "layoutModels": [],
+                                            "visualElements": [
+                                                {
+                                                    "visualElementModelUniqueKey": "listing_wrapper",
+                                                    "label": "Product Listing",
+                                                    "parameters": [
+                                                        {
+                                                            "name": "accessor",
+                                                            "values": [
+                                                                ""
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "visualElement": null,
+                                                    "subRenderings": [
+                                                        {
+                                                            "parameters": [
+                                                                null
+                                                            ],
+                                                            "rendering": {
+                                                                "contexts": [],
+                                                                "layoutModels": [],
+                                                                "visualElements": [
+                                                                    {
+                                                                        "visualElementModelUniqueKey": "toolbar",
+                                                                        "label": "Toolbar with pagination&sorting",
+                                                                        "parameters": [
+                                                                            {
+                                                                                "name": "accessor",
+                                                                                "values": [
+                                                                                    ""
+                                                                                ]
+                                                                            }
+                                                                        ],
+                                                                        "visualElement": null,
+                                                                        "subRenderings": [
+                                                                            {
+                                                                                "parameters": [
+                                                                                    null
+                                                                                ],
+                                                                                "rendering": {
+                                                                                    "contexts": [],
+                                                                                    "layoutModels": [],
+                                                                                    "visualElements": [],
+                                                                                    "parameters": null
+                                                                                }
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    {
+                                                                        "visualElementModelUniqueKey": "product_list",
+                                                                        "label": "Product Collection",
+                                                                        "parameters": [
+                                                                            {
+                                                                                "name": "title",
+                                                                                "values": [
+                                                                                    "{\"de\":\"\",\"en\":\"\"}"
+                                                                                ]
+                                                                            },
+                                                                            {
+                                                                                "name": "see_all_label",
+                                                                                "values": [
+                                                                                    "{\"de\":\"\",\"en\":\"\"}"
+                                                                                ]
+                                                                            },
+                                                                            {
+                                                                                "name": "see_all_link",
+                                                                                "values": [
+                                                                                    "{\"de\":\"\",\"en\":\"\"}"
+                                                                                ]
+                                                                            },
+                                                                            {
+                                                                                "name": "accessor",
+                                                                                "values": [
+                                                                                    ""
+                                                                                ]
+                                                                            }
+                                                                        ],
+                                                                        "visualElement": null,
+                                                                        "subRenderings": [
+                                                                            {
+                                                                                "parameters": [
+                                                                                    null
+                                                                                ],
+                                                                                "rendering": {
+                                                                                    "contexts": [],
+                                                                                    "layoutModels": [],
+                                                                                    "visualElements": [
+                                                                                        {
+                                                                                            "visualElementModelUniqueKey": "product",
+                                                                                            "label": "Dynamic Product",
+                                                                                            "parameters": [
+                                                                                                {
+                                                                                                    "name": "displayMode",
+                                                                                                    "values": [
+                                                                                                        "standard"
+                                                                                                    ]
+                                                                                                },
+                                                                                                {
+                                                                                                    "name": "boxLayout",
+                                                                                                    "values": [
+                                                                                                        "standard"
+                                                                                                    ]
+                                                                                                },
+                                                                                                {
+                                                                                                    "name": "accessor",
+                                                                                                    "values": [
+                                                                                                        ""
+                                                                                                    ]
+                                                                                                }
+                                                                                            ],
+                                                                                            "visualElement": null,
+                                                                                            "subRenderings": [
+                                                                                                {
+                                                                                                    "parameters": [
+                                                                                                        null
+                                                                                                    ],
+                                                                                                    "rendering": {
+                                                                                                        "contexts": [],
+                                                                                                        "layoutModels": [],
+                                                                                                        "visualElements": [],
+                                                                                                        "parameters": null
+                                                                                                    }
+                                                                                                }
+                                                                                            ]
+                                                                                        }
+                                                                                    ],
+                                                                                    "parameters": null
+                                                                                }
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    {
+                                                                        "visualElementModelUniqueKey": "pagination",
+                                                                        "label": "Pagination",
+                                                                        "parameters": [
+                                                                            {
+                                                                                "name": "accessor",
+                                                                                "values": [
+                                                                                    ""
+                                                                                ]
+                                                                            }
+                                                                        ],
+                                                                        "visualElement": null,
+                                                                        "subRenderings": [
+                                                                            {
+                                                                                "parameters": [
+                                                                                    null
+                                                                                ],
+                                                                                "rendering": {
+                                                                                    "contexts": [],
+                                                                                    "layoutModels": [],
+                                                                                    "visualElements": [],
+                                                                                    "parameters": null
+                                                                                }
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                ],
+                                                                "parameters": null
+                                                            }
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "visualElementModelUniqueKey": "facets_sidebar",
+                                                    "label": "Sidebar facets",
+                                                    "parameters": [
+                                                        {
+                                                            "name": "accessor",
+                                                            "values": [
+                                                                ""
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "visualElement": null,
+                                                    "subRenderings": [
+                                                        {
+                                                            "parameters": [
+                                                                null
+                                                            ],
+                                                            "rendering": {
+                                                                "contexts": [],
+                                                                "layoutModels": [],
+                                                                "visualElements": [],
+                                                                "parameters": null
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "parameters": null
+                                        }
+                                    }
+                                ],
+                                "parameters": null
+                            }
+                        },
+                        {
+                            "parameters": null,
+                            "act": {
+                                "format": "CPOActChapter",
+                                "contexts": [],
+                                "subActs": [],
+                                "journeyStepUniqueKeys": null,
+                                "callToActions": null,
+                                "renderings": [
+                                    {
+                                        "parameters": [
+                                            null
+                                        ],
+                                        "rendering": {
+                                            "contexts": [],
+                                            "layoutModels": [],
+                                            "visualElements": [
+                                                {
+                                                    "visualElementModelUniqueKey": "listing_wrapper",
+                                                    "label": "Product Listing Wrapper",
+                                                    "parameters": [
+                                                        {
+                                                            "name": "accessor",
+                                                            "values": [
+                                                                ""
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "visualElement": null,
+                                                    "subRenderings": [
+                                                        {
+                                                            "parameters": [
+                                                                null
+                                                            ],
+                                                            "rendering": {
+                                                                "contexts": [],
+                                                                "layoutModels": [],
+                                                                "visualElements": [
+                                                                    {
+                                                                        "visualElementModelUniqueKey": "facets",
+                                                                        "label": "Facets - get updated",
+                                                                        "parameters": [],
+                                                                        "visualElement": null,
+                                                                        "subRenderings": [
+                                                                            {
+                                                                                "parameters": [
+                                                                                    null
+                                                                                ],
+                                                                                "rendering": {
+                                                                                    "contexts": [],
+                                                                                    "layoutModels": [],
+                                                                                    "visualElements": [],
+                                                                                    "parameters": null
+                                                                                }
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    {
+                                                                        "visualElementModelUniqueKey": "toolbar",
+                                                                        "label": "Toolbar with pagination&sorting",
+                                                                        "parameters": [
+                                                                            {
+                                                                                "name": "accessor",
+                                                                                "values": [
+                                                                                    ""
+                                                                                ]
+                                                                            }
+                                                                        ],
+                                                                        "visualElement": null,
+                                                                        "subRenderings": [
+                                                                            {
+                                                                                "parameters": [
+                                                                                    null
+                                                                                ],
+                                                                                "rendering": {
+                                                                                    "contexts": [],
+                                                                                    "layoutModels": [],
+                                                                                    "visualElements": [],
+                                                                                    "parameters": null
+                                                                                }
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    {
+                                                                        "visualElementModelUniqueKey": "product_list",
+                                                                        "label": "Product Collection",
+                                                                        "parameters": [
+                                                                            {
+                                                                                "name": "title",
+                                                                                "values": [
+                                                                                    "{\"de\":\"\",\"en\":\"\"}"
+                                                                                ]
+                                                                            },
+                                                                            {
+                                                                                "name": "see_all_label",
+                                                                                "values": [
+                                                                                    "{\"de\":\"\",\"en\":\"\"}"
+                                                                                ]
+                                                                            },
+                                                                            {
+                                                                                "name": "see_all_link",
+                                                                                "values": [
+                                                                                    "{\"de\":\"\",\"en\":\"\"}"
+                                                                                ]
+                                                                            },
+                                                                            {
+                                                                                "name": "accessor",
+                                                                                "values": [
+                                                                                    ""
+                                                                                ]
+                                                                            }
+                                                                        ],
+                                                                        "visualElement": null,
+                                                                        "subRenderings": [
+                                                                            {
+                                                                                "parameters": [
+                                                                                    null
+                                                                                ],
+                                                                                "rendering": {
+                                                                                    "contexts": [],
+                                                                                    "layoutModels": [],
+                                                                                    "visualElements": [
+                                                                                        {
+                                                                                            "visualElementModelUniqueKey": "product",
+                                                                                            "label": "Dynamic Product",
+                                                                                            "parameters": [
+                                                                                                {
+                                                                                                    "name": "displayMode",
+                                                                                                    "values": [
+                                                                                                        "standard"
+                                                                                                    ]
+                                                                                                },
+                                                                                                {
+                                                                                                    "name": "boxLayout",
+                                                                                                    "values": [
+                                                                                                        "standard"
+                                                                                                    ]
+                                                                                                },
+                                                                                                {
+                                                                                                    "name": "accessor",
+                                                                                                    "values": [
+                                                                                                        ""
+                                                                                                    ]
+                                                                                                }
+                                                                                            ],
+                                                                                            "visualElement": null,
+                                                                                            "subRenderings": [
+                                                                                                {
+                                                                                                    "parameters": [
+                                                                                                        null
+                                                                                                    ],
+                                                                                                    "rendering": {
+                                                                                                        "contexts": [],
+                                                                                                        "layoutModels": [],
+                                                                                                        "visualElements": [],
+                                                                                                        "parameters": null
+                                                                                                    }
+                                                                                                }
+                                                                                            ]
+                                                                                        }
+                                                                                    ],
+                                                                                    "parameters": null
+                                                                                }
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    {
+                                                                        "visualElementModelUniqueKey": "pagination",
+                                                                        "label": "Pagination",
+                                                                        "parameters": [
+                                                                            {
+                                                                                "name": "accessor",
+                                                                                "values": [
+                                                                                    ""
+                                                                                ]
+                                                                            }
+                                                                        ],
+                                                                        "visualElement": null,
+                                                                        "subRenderings": [
+                                                                            {
+                                                                                "parameters": [
+                                                                                    null
+                                                                                ],
+                                                                                "rendering": {
+                                                                                    "contexts": [],
+                                                                                    "layoutModels": [],
+                                                                                    "visualElements": [],
+                                                                                    "parameters": null
+                                                                                }
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                ],
+                                                                "parameters": null
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "parameters": null
+                                        }
+                                    }
+                                ],
+                                "parameters": null
+                            }
+                        }
+                    ],
+                    "indexesTrue": [
+                        0
+                    ],
+                    "indexesFalse": [
+                        1
+                    ]
+                }
+            }
+        ],
+        "parameters": [],
+        "route": "narratives",
+        "reqParams": null,
+        "$fromServer": true,
+        "parentResource": null,
+        "restangularCollection": false,
+        "isSelected": true
+    }
+]

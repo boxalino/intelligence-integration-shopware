@@ -24,7 +24,7 @@ https://github.com/boxalino/intelligence-framework-shopware/blob/master/src/Fram
 <i>the Autocomplete[Context] will be the one to make the request by using an entity called RequestTransformer 
 [https://github.com/boxalino/intelligence-framework-shopware/blob/master/src/Framework/Request/RequestTransformer.php] 
 and adding extra filters per context: 
-https://github.com/boxalino/intelligence-framework-shopware/blob/e284694d5e8356d9e0ab4c0ca4d58e135f67cd83/src/Framework/Request/ContextAbstract.php#L98
+https://github.com/boxalino/intelligence-framework-shopware/tree/master/src/Framework/Request/ContextAbstract.php#L98
 </i>
 
 ###### 2. Declare a service for the ApiPageLoader
@@ -36,21 +36,27 @@ https://github.com/boxalino/intelligence-integration-shopware/blob/master/src/Re
 
 ###### 3. Decorate the SearchController and use the ApiPageLoader as a dependency
 
-Extend the controller service by making use of the Autocomplete ApiPageLoader from step#2
-https://github.com/boxalino/intelligence-integration-shopware/blob/d5d8c2c2077a7d710c5f40b465149ad17c1fb064/src/Resources/config/services/api/page.xml#L27
+Decorate the controller service by making use of the Autocomplete ApiPageLoader from step#2
+https://github.com/boxalino/intelligence-integration-shopware/tree/master/src/Resources/config/services/api/page.xml#L27
 
 > The context ApiPageContentLoader is being used in the controller/cms pages/etc  
   The ApiPageLoader has access to Autocomplete[Context] request definition and to the ApiCallService
 > The ApiPageLoader makes the call to the Boxalino API
 > https://github.com/boxalino/intelligence-framework-shopware/blob/master/src/Framework/Content/Page/ApiPageLoader.php#L70
 
+(more about decorating the SearchController: https://github.com/boxalino/intelligence-integration-shopware/blob/master/doc/search/INTEGRATION.md)
+
 ###### 4. Create the SearchController
 
 It will be used in order to rewrite the actual suggest action.
-https://github.com/boxalino/intelligence-integration-shopware/blob/d5d8c2c2077a7d710c5f40b465149ad17c1fb064/src/Storefront/Controller/SearchController.php#L74
+https://github.com/boxalino/intelligence-integration-shopware/tree/master/src/Storefront/Controller/SearchController.php#L74
+
 
 ###### 5. Adjust the templates
 
-For the autocomplete, you can either use the response as it comes from Boxalino or define a model on the product list component and load as objects
-The templates can be found here: https://github.com/boxalino/intelligence-integration-shopware/tree/master/src/Resources/views/storefront/narrative/layout/header/suggest
+For the autocomplete, you can either use the response as it comes from Boxalino (without loading a collection of products)
+or define a model on the product list component and load each product as ProductEntity objects
+(more about the model https://github.com/boxalino/intelligence-integration-shopware/blob/master/doc/search/INTEGRATION.md#L104 )
+The templates can be found here: 
+https://github.com/boxalino/intelligence-integration-shopware/tree/master/src/Resources/views/storefront/narrative/layout/header/suggest
 

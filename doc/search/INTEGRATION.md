@@ -21,7 +21,7 @@ https://github.com/boxalino/intelligence-framework-shopware/blob/master/src/Fram
 The SearchContextAbstract class is implementing 2 API-specific interfaces: 
 1. The _SearchContextInterface_ : allows to manage the sub-phrases scenario with parameters https://github.com/boxalino/intelligence-framework-shopware/blob/master/src/Service/Api/Request/Context/SearchContextInterface.php 
 these parameters can be declared when you configure the service in the search.xml
-2. The _ListingContextInterface_ : forces the integrator to *addFacets* based on the request. 
+2. The _ListingContextInterface_ : allows the integrator to *addFacets* based on the request. 
 
 > as an integrator, you can either build your own (following it`s sample) 
 > or extend it (it provides generic filters) for each use-case in order to set more filters if desired or other parameters (return fields, etc) 
@@ -44,12 +44,12 @@ https://github.com/boxalino/intelligence-integration-shopware/blob/master/src/Re
 ###### 3. Decorate the SearchController and use the ApiPageLoader as a dependency
 
 Extend the controller service by making use of the Search ApiPageLoader from step#2
-https://github.com/boxalino/intelligence-integration-shopware/src/Resources/config/services/api/page.xml#L27
+https://github.com/boxalino/intelligence-integration-shopware/src/Resources/config/services/api/page.xml#L40
 
 > The context ApiPageContentLoader is being used in the controller/cms pages/etc  
   The ApiPageLoader has access to Search[Context] request definition and to the ApiCallService
 > The ApiPageLoader makes the call to the Boxalino API
-> https://github.com/boxalino/intelligence-framework-shopware/blob/master/src/Framework/Content/Page/ApiPageLoader.php#L70
+> https://github.com/boxalino/intelligence-framework-shopware/blob/master/src/Framework/Content/Page/ApiPageLoader.php#L60
 
 ###### 4. Create the SearchController
 
@@ -62,29 +62,36 @@ https://github.com/boxalino/intelligence-integration-shopware/src/Storefront/Con
 
 ###### 5. Updating the sorting (optional)
 
-To comply with Shopware6 way for adding sorting, we have designed a sorting handling class that has the map between a Boxalino field
-and a Shopware6/store fields
-https://github.com/boxalino/intelligence-framework-shopware/blob/master/src/Resources/config/services/api/page.xml#L35
+To comply with Shopware6 way for adding sorting, we have designed a sorting handling class.
+If you check the _sorting_ layout block from the JSON samples, it will use the ApiSortingModel as a model for the element.
+https://github.com/boxalino/intelligence-framework-shopware/blob/master/src/Framework/Content/Listing/ApiSortingModel.php
+
+The model requires for a mapping to be provided between the Shopware6 declared sorting keys and Boxalino fields.
+This is being added with the use of setter injection:
+https://github.com/boxalino/intelligence-integration-shopware/blob/master/src/Resources/config/services/api/page.xml#L24
+(the presented are the default Shopware6 sorting fields)
 
 In case your setup handles more/other sorting options:
 1. Follow the Shopware6 documentation on how to declare new sorting fields
-2. Declare new fields to the collection by using the service
+2. Declare new fields to the collection by updating the XML
 
 ###### 6. Facets
 
 - Shopware6 facets are ajax-based. The controller action that handles the facets is the *pagelet* function.
-- By _default_, Shopware6 does not update facets&search page title on pagelet, only the content within cmsProductListingSelector
+- By _default_, Shopware6 does not update facets&search page title on pagelet, only the content within *cmsProductListingSelector*
 (as seen in the vendor/shopware/platform/src/Storefront/Resources/app/storefront/src/plugin/listing/listing.plugin.js, renderResponse action)
 
 In the template samples within this repository, the integrator is presented with a strategy to also re-render the facets with each ajax call.
 This will provide the user with the facet options available based on prior selected filters.
 
-####### 6.1 Update facets based on prior selected options
+####### 6.1 Update facets based on user selected options
 In order to integrate this functionality:
 1. use the narrative-ajax.json for the narrative structure: it is composed of a single block wrapping the title, facets, products
-2. add the JavaScript class https://github.com/boxalino/intelligence-integration-shopware/tree/master/src/Resources/app/storefront/src/boxalinointegration/boxalinointegration.plugin.js
-> the JS contains more information on what it represents
-3. check out the filter-panel template for more insight/differences: https://github.com/boxalino/intelligence-integration-shopware/tree/master/src/Resources/views/storefront/narrative/component/listing/filter-panel.html.twig
+2. add the JavaScript class 
+https://github.com/boxalino/intelligence-integration-shopware/tree/master/src/Resources/app/storefront/src/boxalinointegration/boxalinointegration.plugin.js
+> the JS contains more information on what it represents; it is to be updated and maintained within your own repository
+3. check out the filter-panel template for more insight/differences: 
+https://github.com/boxalino/intelligence-integration-shopware/tree/master/src/Resources/views/storefront/narrative/component/listing/filter-panel.html.twig
 
 ####### 6.2 Shopware6 default
 In order to integrate this strategy:
@@ -95,12 +102,14 @@ In order to integrate this strategy:
 ###### 7. Create templates
 
 For the search response we recommend to use a model load (as defined in your product list component).
-(sample service: https://github.com/boxalino/intelligence-framework-shopware/blob/ea7ad9b71eff66bebdd988e098d332494b299fbe/src/Resources/config/services/api/page.xml#L22)
+One is provided within the framework https://github.com/boxalino/intelligence-framework-shopware/blob/master/src/Framework/Content/Listing/ApiEntityCollectionModel.php
+(service declaration, used in the _product_ layout block: https://github.com/boxalino/intelligence-framework-shopware/blob/master/src/Resources/config/services/api/page.xml#L28)
 
-This will ensure proper price and stock display. It is a mock for the Shopware6 SearchEntityResult response type, with all the aggregations provided by Shopware6.
+This will ensure proper price and stock display. 
+It is a mock for the Shopware6 SearchEntityResult response type, with all the aggregations provided by Shopware6.
 
 _In this repository are integrated sample templates based on the default Shopware6 templates.
-These are to be styled and adapted per your project requirements. Boxalino is not providing front-end/template customizations._
+These are to be styled and adapted per your project requirements. Boxalino is not providing front-end/template maintenance._
 
 1. minimum adjustments for the cms-element-product-listing element by adding bits of header/wrapper from the search
 https://github.com/boxalino/intelligence-integration-shopware/blob/master/src/Resources/views/storefront/narrative/element/cms-element-product-listing.html.twig

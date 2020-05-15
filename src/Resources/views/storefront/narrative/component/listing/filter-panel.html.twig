@@ -26,11 +26,9 @@ renders the facets as are set in the facet model
                      class="filter-panel-wrapper"
                      data-offcanvas-filter-content="true">
                     {% block component_filter_panel %}
-                        {% set sidebar = block.section == 'sidebar' %}
                         {% block component_filter_panel_header %}
                             <div class="filter-panel-offcanvas-header">
                                 <h3 class="filter-panel-offcanvas-only">{{ "listing.filterTitleText"|trans }}</h3>
-
                                 <div class="filter-panel-offcanvas-only filter-panel-offcanvas-close js-offcanvas-close">
                                     {% sw_icon 'x' style { 'size': 'md' } %}
                                 </div>

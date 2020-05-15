@@ -10,7 +10,8 @@ Similar to the _cross-selling_ integration, the CMS block slot content is being 
 A CMS element is similar to a _listing_ request/context: it can be used with facets as well.
 
 The narrative CMS block is located in the *block category "Commerce"* , with the name *Boxalino Narrative*.
-All properties are declated in the CMS block configuration from your Shopping Experience Layout.
+All properties are declared in the CMS block configuration from your Shopping Experience Layout.
+The required properties are marked with a * (star).
 
 ## Steps
  ###### 1. Declare a service for the CMS definition request 
@@ -31,16 +32,28 @@ https://github.com/boxalino/intelligence-framework-shopware/blob/master/src/Fram
 this content loader has to be declared as a service:
 https://github.com/boxalino/intelligence-integration-shopware/blob/master/src/Resources/config/services/api/cms.xml#L18
 
-the CMS definition request from step#1 must be set "setApiContextInterface"
+the CMS definition request from step#1 must be declared via a setter injection with "setApiContextInterface"
 https://github.com/boxalino/intelligence-integration-shopware/blob/master/src/Resources/config/services/api/cms.xml#L22
+
+The ApiCmsLoader will return a _page_ per Shopware6 CMS elements standard.
+It uses the ApiCmsModel https://github.com/boxalino/intelligence-framework-shopware/blob/master/src/Framework/Content/Listing/ApiCmsModel.php
 
 ###### 3. Add the pre-built subscriber
 
+In the Framework is available a subscriber which can be used as is:
+https://github.com/boxalino/intelligence-framework-shopware/blob/master/src/Framework/Content/Subscriber/ApiCmsLoaderSubscriber.php
+
+In order to integrate it, you have to declare it:
 https://github.com/boxalino/intelligence-integration-shopware/blob/master/src/Resources/config/services/api/cms.xml#L27
 
+> The context ApiCmsLoader is being used to read the configuration of the CMS block, make the request to Boxalino API and structure the response
 
-> The context ApiCmsLoader is being used to read the configuration of the CMS block, 
-> makes the request to Boxalino API and  creates the respons
+> The subscriber ApiCmsLoaderSubscriber is being used to go through the layout`s sections&blocks and identify the narrative element, 
+> https://github.com/boxalino/intelligence-framework-shopware/blob/master/src/Framework/Content/Subscriber/ApiCmsLoaderSubscriber.php#L81
 
-*when the tracker will be available for installation, certain classes and data-segments will be added in order to track user movement 
-and what content has been displayed.
+###### 4. Templating
+
+The templates used are the ones configured in the sample layout block _product_slider_ and _product_
+https://github.com/boxalino/intelligence-integration-shopware/blob/master/src/Resources/views/storefront/narrative/element/cms-element-product-slider.html.twig
+
+There has been applied minimum updates which can be checked by mapping it with the default Shopware6 template.
