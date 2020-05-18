@@ -1,5 +1,7 @@
 # Boxalino Intelligence Integration - Shopware6
 
+## IMPORTANT: This project is obsolete and has been replaced by https://github.com/boxalino/rtux-integration-shopware
+
 ## Introduction
 This repo is to be used as a sample on how to integrate and define desired Boxalino features.
 The integration is managed by the client.
